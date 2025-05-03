@@ -5,7 +5,6 @@
 
 Tüm ipuçlarını bir araya getirerek cinayeti kimin işlediğini ortaya çıkarmak ve doğru kişiyi adalete teslim etmek.
 
----
 
 ## KARAKTER SEÇİMİ
 
@@ -14,7 +13,6 @@ Oyuncu oyun başında karakterini seçer:
 1. Kız (...)
 2. Erkek (...)
 
----
 
 ## GİRİŞ (PROLOG)
 
@@ -24,7 +22,6 @@ Kimse onun bir düşmanı olabileceğine inanmak istemiyor. Ancak gerçek, karan
 
 > Dedektif **(...)**, görevin olayın ardındaki gerçeği ortaya çıkarmak, suçluyu bulmak ve kasabaya yeniden huzur getirmek.
 
----
 
 ## KARAKTERLER
 
@@ -44,7 +41,6 @@ Kimse onun bir düşmanı olabileceğine inanmak istemiyor. Ancak gerçek, karan
 - **Akraba:** Miras meselesi
 - **İş Ortağı / Okul Arkadaşı:** Borç, kıskançlık veya anlaşmazlık
 
----
 
 ## ANA GÖREVLER
 
@@ -75,7 +71,6 @@ Kimse onun bir düşmanı olabileceğine inanmak istemiyor. Ancak gerçek, karan
 - İzinler al
 - Destek iste
 
----
 
 ## KARARLARIN SONUÇLARI
 
@@ -94,13 +89,11 @@ Kimse onun bir düşmanı olabileceğine inanmak istemiyor. Ancak gerçek, karan
 - Olay çözümsüz kalabilir
 - Şüpheliler seni yanıltabilir
 
----
 
 ## Geliştirme Notları
 
 Bu proje, interaktif dedektiflik unsurlarıyla kullanıcıların mantık yürütme ve dikkat becerilerini geliştirmeyi amaçlamaktadır. Oyun çoklu sonlara sahiptir ve yeniden oynanabilirlik özelliği taşır.
 
----
 
 ## Lisans
 
