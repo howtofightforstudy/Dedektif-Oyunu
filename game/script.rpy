@@ -1,0 +1,31 @@
+﻿# Oyundaki karakterleri tanimla. Renk argumani karakterin
+# isminin rengini belirler.
+define e = Character("Eileen")
+image ev = "images/ev.jpg"
+
+transform bg_fullscreen:
+    zoom 2.0
+# Oyun burada baslar.
+
+label start:
+    scene ev at bg_fullscreen
+    play music "audio/op.mp3" volume 0.5
+
+    "Yıl 1922. Sisli bir sabahın serinliğinde, Steiner malikanesinin gri taş duvarları yankı dolu bir çığlıkla sarsıldı."
+
+    "Zengin ve küstah genç adam Lukas Steiner, odasında cansız halde bulundu. Parmaklarının ucunda bir kahve fincanı, göğsünde ise soğuk bir bıçağın izini taşıyan derin bir yara..."
+
+    "Steiner, kadınlara karşı küçümseyici tavırlarıyla tanınır; ardında incinmiş kalpler, bastırılmış öfkeler ve sessizce yutulmuş nefretler bırakırdı."
+
+    "O sabah, kahve fincanındaki parmak izleri ve tek bir yudum dahi alınmamış kahve, olayın yalnızca başlangıcıydı."
+    
+    "Hizmetçi gözaltına alındı. Fakat o evde herkesin bir bahanesi, herkesin karanlıkta kalan bir yüzü vardı."
+
+    "Zira bazı sırlar, kahveden bile daha acıydı."
+
+
+    # Bir arkaplan goster. Varsayilan olarak bir yer tutucu kullanilir, ancak siz
+    # resimler klasorune bir dosya ekleyerek (bg room.png ya da bg room.jpg adinda)
+    # eklediginiz resmi gosterebilirsiniz.
+
+    return
