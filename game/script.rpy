@@ -6,6 +6,8 @@ image ev = "images/ev.jpg"
 
 transform bg_fullscreen:
     zoom 2.0
+    xalign (0.5, 0.5)
+    yalign (0.5, 0.5)
 # Oyun burada baslar.
 
 label start:
