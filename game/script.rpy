@@ -2,6 +2,15 @@
 # isminin rengini belirler.
 define e = Character("Eileen")
 image ev = "images/ev.jpg"
+image hizmetci = "images/karakterler/hizmetci.png"
+define hizmetci = Character("Hizmetçi", color="#c8ffc8")
+transform karakter_buyuk:
+    zoom 2  # Oranı ihtiyacına göre artırabilirsin 
+    anchor (0.5, 1.0)
+    xalign 0.5
+    yalign 1.0
+
+image hizmetci = Image("images/karakterler/hizmetci.png")
 
 transform bg_fullscreen:
     zoom 2.0
@@ -18,8 +27,14 @@ label start:
     "Steiner, kadınlara karşı küçümseyici tavırlarıyla tanınır; ardında incinmiş kalpler, bastırılmış öfkeler ve sessizce yutulmuş nefretler bırakırdı."
 
     "O sabah, kahve fincanındaki parmak izleri ve tek bir yudum dahi alınmamış kahve, olayın yalnızca başlangıcıydı."
-    
+
     "Hizmetçi gözaltına alındı. Fakat o evde herkesin bir bahanesi, herkesin karanlıkta kalan bir yüzü vardı."
+
+    show hizmetci at karakter_buyuk 
+    with dissolve
+
+    hizmetci "Ben kimseye zara vermedim efendim. 
+    Sadece işimi yaptım. Kahve hazırladım, odasını temizledim ve kapıyı kapattım. Yemin ederim ben yapmadım"
 
     "Zira bazı sırlar, kahveden bile daha acıydı."
 
