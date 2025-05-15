@@ -1,6 +1,7 @@
 ﻿# Oyundaki karakterleri tanimla. Renk argumani karakterin
 # isminin rengini belirler.
 define e = Character("Eileen")
+define hizmetci = Character("hizmetçi", color="#00ff00")
 image ev = "images/ev.jpg"
 
 transform bg_fullscreen:
