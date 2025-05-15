@@ -1,6 +1,7 @@
 ﻿# Oyundaki karakterleri tanimla. Renk argumani karakterin
 # isminin rengini belirler.
 define e = Character("Eileen")
+define hizmetci = Character("hizmetçi", color="#00ff00")
 image ev = "images/ev.jpg"
 image hizmetci = "images/karakterler/hizmetci.png"
 define hizmetci = Character("Hizmetçi", color="#c8ffc8")
@@ -14,6 +15,8 @@ image hizmetci = Image("images/karakterler/hizmetci.png")
 
 transform bg_fullscreen:
     zoom 2.0
+    xalign (0.5, 0.5)
+    yalign (0.5, 0.5)
 # Oyun burada baslar.
 
 label start:
