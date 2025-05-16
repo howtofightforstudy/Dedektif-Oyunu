@@ -1,6 +1,4 @@
-﻿
-
-# Karakter tanımlamaları
+﻿# Karakter tanımlamaları
 define dedektif_e = Character("Dedektif", color="#c8c8ff")
 define dedektif_k = Character("Dedektif", color="#c8c8ff")
 define hizmetci = Character("Hizmetçi", color="#c8ffc8")
@@ -56,7 +54,7 @@ label start:
     "Zira bazı sırlar, kahveden bile daha acıydı."
     show hizmetci_resim at karakter_buyuk_sol with dissolve
 
-    hizmetci "Ben kimseye zara vermedim efendim. Sadece işimi yaptım. Kahve hazırladım, odasını temizledim ve kapıyı kapattım. Yemin ederim ben yapmadım!"
+    hizmetci "Ben kimseye zarar vermedim efendim. Sadece işimi yaptım. Kahve hazırladım, odasını temizledim ve kapıyı kapattım. Yemin ederim ben yapmadım!"
     show dedektif_e_resim at karakter_buyuk_sag with moveinright
     dedektif_e "Gerçekler her ne ise eninde sonunda ortaya çıkacaktır."
     hide hizmetci_resim with dissolve
@@ -70,7 +68,6 @@ label dedektif_secimi:
     show dedektif_e_resim at karakter_buyuk_sol with moveinleft
     show dedektif_k_resim at karakter_buyuk_sag with moveinright
     menu:
-
         "Erkek Dedektif":
             $ secilen_dedektif_tipi = "erkek"
             $ secilen_dedektif_karakteri = dedektif_e
@@ -86,7 +83,6 @@ label dedektif_secimi:
             dedektif_k "Kadın dedektifi seçtiniz."
             jump dedektif_isim_girisi
 
-
 label dedektif_isim_girisi:
     scene sorgu_odasi at bg_fullscreen with fade
 
@@ -94,17 +90,16 @@ label dedektif_isim_girisi:
         show dedektif_e_resim at karakter_buyuk
         $ dedektif_isim = renpy.input("Lütfen erkek dedektifin ismini girin:")
         if dedektif_isim == "":
-            $ dedektif_isim = "Erkek Dedektif" # Varsayılan isim
+            $ dedektif_isim = "Erkek Dedektif"
         $ secilen_dedektif_karakteri = Character(dedektif_isim, color="#c8c8ff")
-        show dedektif_e_resim at karakter_buyuk
         secilen_dedektif_karakteri "Merhaba, ben [dedektif_isim]."
+
     elif secilen_dedektif_tipi == "kadin":
         show dedektif_k_resim at karakter_buyuk
         $ dedektif_isim = renpy.input("Lütfen kadın dedektifin ismini girin:")
         if dedektif_isim == "":
-            $ dedektif_isim = "Kadın Dedektif" # Varsayılan isim
+            $ dedektif_isim = "Kadın Dedektif"
         $ secilen_dedektif_karakteri = Character(dedektif_isim, color="#c8c8ff")
-        show dedektif_k_resim at karakter_buyuk
         secilen_dedektif_karakteri "Merhaba, ben [dedektif_isim]."
 
     jump olaylar_baslangici
