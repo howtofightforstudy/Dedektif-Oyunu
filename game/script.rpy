@@ -6,17 +6,17 @@ image ev = "images/ev.jpg"
 image hizmetci = "images/karakterler/hizmetci.png"
 define hizmetci = Character("Hizmetçi", color="#c8ffc8")
 transform karakter_buyuk:
-    zoom 2  # Oranı ihtiyacına göre artırabilirsin 
+    zoom 1.5 # Oranı ihtiyacına göre artırabilirsin 
     anchor (0.5, 1.0)
     xalign 0.5
-    yalign 1.0
+    yalign 0.65
 
 image hizmetci = Image("images/karakterler/hizmetci.png")
 
 transform bg_fullscreen:
     zoom 2.0
-    xalign (0.5, 0.5)
-    yalign (0.5, 0.5)
+   
+    
 # Oyun burada baslar.
 
 label start:
@@ -37,7 +37,7 @@ label start:
     with dissolve
 
     hizmetci "Ben kimseye zara vermedim efendim. 
-    Sadece işimi yaptım. Kahve hazırladım, odasını temizledim ve kapıyı kapattım. Yemin ederim ben yapmadım"
+    Sadece işimi yaptım. Kahve hazırladım, odasını temizledim ve kapıyı kapattım. Yemin ederim ben yapmadım!"
 
     "Zira bazı sırlar, kahveden bile daha acıydı."
 
