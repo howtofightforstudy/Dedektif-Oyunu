@@ -1,46 +1,37 @@
-﻿# Oyun başlığı
-define config.name = "Gizemli Vaka"
-
-# Karakter tanımlamaları
-define dedektif_e = Character("Dedektif", color="#c8c8ff")
-define dedektif_k = Character("Dedektif", color="#c8c8ff")
-define hizmetci = Character("Hizmetçi", color="#c8ffc8")
-
-# Resim tanımlamaları
+﻿# Oyundaki karakterleri tanimla. Renk argumani karakterin
+# isminin rengini belirler.
+define e = Character("Eileen")
+define hizmetci = Character("hizmetçi", color="#00ff00")
 image ev = "images/ev.jpg"
-image sorgu_odasi = "images/sorgu_odasi.png"
-image dedektif_e_resim = "images/karakterler/erkek_dedektif.png"
-image dedektif_k_resim = "images/karakterler/kadin_dedektif.png"
-image hizmetci_resim = "images/karakterler/hizmetci.png"
-
-# Transform tanımlamaları
+image hizmetci = "images/karakterler/hizmetci.png"
+define hizmetci = Character("Hizmetçi", color="#c8ffc8")
+define dedektif = Character("Dedektif", color="#c8c8ff")
+image dedektif = "images/karakterler/erkek_dedektif.png"
 transform karakter_buyuk:
-    zoom 1.5
+    zoom 1.5 # Oranı ihtiyacına göre artırabilirsin 
     anchor (0.5, 1.0)
     xalign 0.5
     yalign 0.65
-
 transform karakter_buyuk_sag:
     zoom 1.5
     anchor (0.5, 1.0)
-    xalign 0.8
+    xalign 0.8   # Sağda hizalama
     yalign 0.65
 
 transform karakter_buyuk_sol:
     zoom 1.5
     anchor (0.5, 1.0)
-    xalign 0.2
+    xalign 0.2   # Solda hizalama
     yalign 0.65
+
+image hizmetci = Image("images/karakterler/hizmetci.png")
 
 transform bg_fullscreen:
     zoom 2.0
+   
+    
+# Oyun burada baslar.
 
-# Oyun değişkenleri
-default dedektif_isim = ""
-default secilen_dedektif_tipi = ""
-default secilen_dedektif_karakteri = None
-
-# Oyun başlangıcı
 label start:
     scene ev at bg_fullscreen
     play music "audio/op.mp3" volume 0.5
@@ -55,73 +46,22 @@ label start:
 
     "Hizmetçi gözaltına alındı. Fakat o evde herkesin bir bahanesi, herkesin karanlıkta kalan bir yüzü vardı."
     "Zira bazı sırlar, kahveden bile daha acıydı."
-    show hizmetci_resim at karakter_buyuk_sol with dissolve
+    show hizmetci at karakter_buyuk_sol 
+    with dissolve
 
-    hizmetci "Ben kimseye zara vermedim efendim. Sadece işimi yaptım. Kahve hazırladım, odasını temizledim ve kapıyı kapattım. Yemin ederim ben yapmadım!"
-    show dedektif_e_resim at karakter_buyuk_sag with moveinright
-    dedektif_e "Gerçekler her ne ise eninde sonunda ortaya çıkacaktır."
-    hide hizmetci_resim with dissolve
+    hizmetci "Ben kimseye zara vermedim efendim. 
+    Sadece işimi yaptım. Kahve hazırladım, odasını temizledim ve kapıyı kapattım. Yemin ederim ben yapmadım!"
+    show dedektif at karakter_buyuk_sag with moveinright
+    dedektif "Gerçekler her ne ise eninde sonunda ortaya çıkacaktır."
+    hide hizmetci with dissolve
 
-    show dedektif_e_resim at karakter_buyuk with moveinright
-    dedektif_e "Bu cinayet sıradan bir cinayet değil!"
-    jump dedektif_secimi
-
-label dedektif_secimi:
-    scene sorgu_odasi at bg_fullscreen with fade
-    show dedektif_e_resim at karakter_buyuk_sol with moveinleft
-    show dedektif_k_resim at karakter_buyuk_sag with moveinright
-    menu:
-
-        "Erkek Dedektif":
-            $ secilen_dedektif_tipi = "erkek"
-            $ secilen_dedektif_karakteri = dedektif_e
-            show dedektif_e_resim at karakter_buyuk
-            hide dedektif_k_resim 
-            dedektif_e "Erkek dedektifi seçtiniz."
-            jump dedektif_isim_girisi
-        "Kadın Dedektif":
-            $ secilen_dedektif_tipi = "kadin"
-            $ secilen_dedektif_karakteri = dedektif_k
-            show dedektif_k_resim at karakter_buyuk
-            hide dedektif_e_resim
-            dedektif_k "Kadın dedektifi seçtiniz."
-            jump dedektif_isim_girisi
+    show dedektif at karakter_buyuk with moveinright
+    dedektif "Bu cinayet sıradan bir cinayet değil!"
 
 
-label dedektif_isim_girisi:
-    scene sorgu_odasi at bg_fullscreen with fade
 
-    if secilen_dedektif_tipi == "erkek":
-        show dedektif_e_resim at karakter_buyuk
-        $ dedektif_isim = renpy.input("Lütfen erkek dedektifin ismini girin:")
-        if dedektif_isim == "":
-            $ dedektif_isim = "Erkek Dedektif" # Varsayılan isim
-        $ secilen_dedektif_karakteri = Character(dedektif_isim, color="#c8c8ff")
-        show dedektif_e_resim at karakter_buyuk
-        secilen_dedektif_karakteri "Merhaba, ben [dedektif_isim]."
-    elif secilen_dedektif_tipi == "kadin":
-        show dedektif_k_resim at karakter_buyuk
-        $ dedektif_isim = renpy.input("Lütfen kadın dedektifin ismini girin:")
-        if dedektif_isim == "":
-            $ dedektif_isim = "Kadın Dedektif" # Varsayılan isim
-        $ secilen_dedektif_karakteri = Character(dedektif_isim, color="#c8c8ff")
-        show dedektif_k_resim at karakter_buyuk
-        secilen_dedektif_karakteri "Merhaba, ben [dedektif_isim]."
+    # Bir arkaplan goster. Varsayilan olarak bir yer tutucu kullanilir, ancak siz
+    # resimler klasorune bir dosya ekleyerek (bg room.png ya da bg room.jpg adinda)
+    # eklediginiz resmi gosterebilirsiniz.
 
-    jump olaylar_baslangici
-
-label olaylar_baslangici:
-    scene sorgu_odasi at bg_fullscreen
-
-    show hizmetci_resim at karakter_buyuk_sol with dissolve
-    hizmetci "Neden beni buraya getirdiniz? Ne istiyorsunuz benden?"
-
-    if secilen_dedektif_tipi == "erkek":
-        show dedektif_e_resim at karakter_buyuk_sag with moveinright
-        secilen_dedektif_karakteri "Sakin olun, neler olduğunu anlatın."
-    elif secilen_dedektif_tipi == "kadin":
-        show dedektif_k_resim at karakter_buyuk_sag with moveinright
-        secilen_dedektif_karakteri "Sakin olun, neler olduğunu anlatın."
-
-    # Oyunun geri kalan olay örgüsü burada devam edecek...
     return
