@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 27: expected 'simple_expression' not found.
-    with with dissolve
-         ^
+File "game/script.rpy", line 54: expected 'simple_expression' not found.
+    show dedektif at with moveinleft
+                     ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Thu May 15 17:48:11 2025
+Fri May 16 12:25:37 2025
