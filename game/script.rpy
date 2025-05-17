@@ -314,7 +314,7 @@ label sorgu_kurbanin_annesi:
     secilen_dedektif_karakteri "Bu mektup... Lukas’a yazılmış tehditlerle dolu. Yazı stilinizle eşleşiyor."
     kurbanin_annesi "Ben yazmadım. Ama kimin yazdığını tahmin edebiliyorum."
     menu:
-        "Eğer kimin yazdığını biliyorsanız, söylemek zorundasınız Matilda Hanım. Aksi halde sizi gizli tanık değil, şüpheli olarak ele alırım."
+        "Eğer kimin yazdığını biliyorsanız, söylemek zorundasınız Matilda Hanım. Aksi halde sizi gizli tanık değil, şüpheli olarak ele alırım.":
             secilen_dedektif_karakteri "Eğer kimin yazdığını biliyorsanız, söylemek zorundasınız Matilda Hanım. Aksi halde sizi gizli tanık değil, şüpheli olarak ele alırım."
             kurbanin_annesi "Beni tehdit mi ediyorsunuz, dedektif?"
             secilen_dedektif_karakteri "Hayır, sadece gerçeği arıyorum. Ve siz o gerçeği saklıyorsunuz gibi görünüyor."
@@ -328,7 +328,10 @@ label sorgu_kurbanin_annesi:
             secilen_dedektif_karakteri "Anladım. Sorgu için teşekkürler Matilda Hanım."
         "Belki bu mektup bir annenin çaresizliğiydi. Oğlunuzu uyarmak istemiş olabilirsiniz. Size saldırmak için değil, anlamak için buradayım."
             secilen_dedektif_karakteri "Belki bu mektup bir annenin çaresizliğiydi. Oğlunuzu uyarmak istemiş olabilirsiniz. Size saldırmak için değil, anlamak için buradayım."
-            
+            kurbanin_annesi "Dedektif… Lukas benim oğlumdu. Ama o... beni defalarca küçük düşürdü. İnsanlara, özellikle kadınlara kötü davranıyordu. Onun annesi olmaktan bazen utanıyordum."
+            secilen_dedektif_karakteri "Bunu anlamak kolay değil ama lütfen söyleyin. Bu mektup sizi değilse kimi işaret ediyor?"
+            kurbanin_annesi "Gregory. Kocam. Bir süredir çok öfkeliydi Lukas’a. ‘Biz böyle bir evlat yetiştirmedik’ diyordu. Mektubu o yazmış olabilir. El yazımız benzerdir… belki de dikkatli bakarsanız farkı görebilirsiniz."
+            secilen_dedektif_karakteri "Anlıyorum. Teşekkür ederim. Bunu doğrulamak için Gregory ile de konuşmam gerekecek"
     jump supheliler_sorgulaniyor
 
 label sorgu_kurbanin_babasi:
