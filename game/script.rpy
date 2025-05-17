@@ -77,14 +77,14 @@ label dedektif_secimi:
             $ secilen_dedektif_karakteri = dedektif_e
             show dedektif_e_resim at karakter_buyuk
             hide dedektif_k_resim 
-            dedektif_e "Erkek dedektifi seçtiniz."
+            "Erkek dedektifi seçtiniz."
             jump dedektif_isim_girisi
         "Kadın Dedektif":
             $ secilen_dedektif_tipi = "kadin"
             $ secilen_dedektif_karakteri = dedektif_k
             show dedektif_k_resim at karakter_buyuk
             hide dedektif_e_resim
-            dedektif_k "Kadın dedektifi seçtiniz."
+            "Kadın dedektifi seçtiniz."
             jump dedektif_isim_girisi
 
 label dedektif_isim_girisi:
@@ -131,6 +131,8 @@ label olaylar_baslangici:
 
 label supheliler_sorgulaniyor: 
     scene sorgu_odasi at bg_fullscreen
+
+    show sef at karakter_buyuk
     sef "Önce kimi sorgulamak istersiniz?"
     menu:
         "Hizmetçi":
@@ -146,7 +148,7 @@ label supheliler_sorgulaniyor:
 
 label sorgu_hizmetci:
     scene sorgu_odasi at bg_fullscreen
-    show hizmetci_resim at karakter_buyuk_sag with moveinright
+    show hizmetci_resim at karakter_buyuk_sag with moveinleft
     if secilen_dedektif_tipi == "erkek":
         show dedektif_e_resim at karakter_buyuk_sag with moveinright
         secilen_dedektif_karakteri "Direkt konuya gireceğim, boş vaktimiz yok. Lukas Steiner vefat ettiği zaman elinde fincan vardı. Kahveyi sen hazırlamışsın Elena Hanım. Fincanda sadece senin parmak izlerin var. Bunu nasıl açıklarsın?"
