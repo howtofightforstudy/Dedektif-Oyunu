@@ -336,7 +336,8 @@ label sorgu_kurbanin_annesi:
 label sorgu_kurbanin_babasi:
     scene sorgu_odasi at bg_fullscreen
     show kurbanin_babasi_resim at karakter_buyuk
-    kurbanin_babasi "Lukas ile aramızda bazı sorunlar vardı ama onu öldürecek kadar ileri gitmem."
+    
+    
     jump supheliler_sorgulaniyor
 
 return
