@@ -107,27 +107,67 @@ label dedektif_isim_girisi:
         secilen_dedektif_karakteri "Merhaba, ben [dedektif_isim]."
 
     jump olaylar_baslangici
-
 label olaylar_baslangici:
     scene kasaba at bg_fullscreen
+    show sef_resim at karakter_buyuk_sol with dissolve
+
+    sef "Kasabamıza hoş geldiniz, Dedektif. Sizlerle tanışmak büyük bir onurdur."
 
     menu:
         "Kasaba şefiyle tanış":
             if secilen_dedektif_tipi == "erkek":
                 show dedektif_e_resim at karakter_buyuk_sag with moveinright
-                secilen_dedektif_karakteri "Memnun oldum ,nasılsınız? Dosyayı inceledim ancak bana olayı kısaca anlatır mısınız ?"
+                secilen_dedektif_karakteri "Memnun oldum, nasılsınız? Dosyayı inceledim, ancak bana olayı kısaca anlatır mısınız?"
             elif secilen_dedektif_tipi == "kadin":
                 show dedektif_k_resim at karakter_buyuk_sag with moveinright
-                secilen_dedektif_karakteri "Memnun oldum ,nasılsınız ? Dosyayı inceledim ancak bana olayı kısaca anlatır mısınız ?"
+                secilen_dedektif_karakteri "Memnun oldum, nasılsınız? Dosyayı inceledim, ancak bana olayı kısaca anlatır mısınız?"
+            $ tanisma_secildi = True
+
         "Direkt vakaya geç":
             if secilen_dedektif_tipi == "erkek":
                 show dedektif_e_resim at karakter_buyuk_sag with moveinright
-                secilen_dedektif_karakteri "Merhaba Şef hemen vakaya geçebilir miyiz?"
+                secilen_dedektif_karakteri "Merhaba Şef, hemen vakaya geçebilir miyiz?"
             elif secilen_dedektif_tipi == "kadin":
                 show dedektif_k_resim at karakter_buyuk_sag with moveinright
-                secilen_dedektif_karakteri "Merhaba Şef hemen vakaya geçebilir miyiz?"
+                secilen_dedektif_karakteri "Merhaba Şef, hemen vakaya geçebilir miyiz?"
+            $ tanisma_secildi = False
+
+    if tanisma_secildi:
+        jump tanis
+    else:
+        jump gec
+
+label tanis:
+    show sef_resim at karakter_buyuk_sag
+
+    sef "İyiyim, umarım siz de iyisinizdir... Dedektif, sabah saatlerinde bağırışlar üzerine yukarı çıktık. Lukas Steiner odasında ölü bulundu."
+    "Göğsünde derin bir bıçak yarası vardı. Yanında da dokunulmamış bir kahve fincanı..."
+    "Parmak izleri hizmetçiye aitmiş ama kız kahveyi içmeden bırakmış. Hizmetçi zehir koyduğunu kabul ediyor ama 'öldürmedim' diyor."
+    "O evde herkesin bir bahanesi var ama hiçbiri temiz değil, bilesiniz."
+    
+
+    if secilen_dedektif_tipi == "erkek":
+        show dedektif_e_resim at karakter_buyuk_sag
+    else:
+        show dedektif_k_resim at karakter_buyuk_sag
+
+    secilen_dedektif_karakteri "Şüpheliler belliyse hemen sorgulamak istiyorum."
 
     jump supheliler_sorgulaniyor
+
+label gec:
+    show sef_resim at karakter_buyuk_sag
+    sef "Anladım Dedektif. O zaman hemen vakaya geçelim..."
+    if secilen_dedektif_tipi == "erkek":
+        show dedektif_e_resim at karakter_buyuk_sag with moveinright
+        secilen_dedektif_karakteri "Şüpheliler belli ise hemen sorgulamak istiyorum"
+    elif secilen_dedektif_tipi == "kadin":
+        show dedektif_k_resim at karakter_buyuk_sag with moveinright
+        secilen_dedektif_karakteri "Şüpheliler belli ise hemen sorgulamak istiyorum"
+
+    jump supheliler_sorgulaniyor
+
+
 
 label supheliler_sorgulaniyor: 
     scene sorgu_odasi at bg_fullscreen
