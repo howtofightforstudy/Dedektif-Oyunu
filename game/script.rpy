@@ -188,62 +188,39 @@ label supheliler_sorgulaniyor:
 
 label sorgu_hizmetci:
     scene sorgu_odasi at bg_fullscreen
-    show hizmetci_resim at karakter_buyuk_sag with moveinleft
+    show hizmetci_resim at karakter_buyuk_sol with moveinleft
+
     if secilen_dedektif_tipi == "erkek":
         show dedektif_e_resim at karakter_buyuk_sag with moveinright
-        secilen_dedektif_karakteri "Direkt konuya gireceğim, boş vaktimiz yok. Lukas Steiner vefat ettiği zaman elinde fincan vardı. Kahveyi sen hazırlamışsın Elena Hanım. Fincanda sadece senin parmak izlerin var. Bunu nasıl açıklarsın?"
-        hizmetci "…"
-        hizmetci "Kahveyi hazırladım evet ama sadece içine biraz bitki özü kattım. Uykusuzdu son günlerde. Ona zarar vermek istemedim."
-        menu: 
-            "Kahve içilmemiş. Bu durum için üzgün olmalısınız, sonuçta yardımcı olamadınız.":
-                hizmetci "Evet gerçekten çok üzgünüm… Bir yudum bile içse uykusuzluğuna çok iyi geleceğine emindim."
-                secilen_dedektif_karakteri "Anladım. Mutfakta olduğunuz için bıçakların hepsini biliyor olmalısın sonuçta mutfakta çalışıyorsun. Steiner’ın ölüm sebebi bıçak yarası, buna ne diyeceksiniz?"
-                hizmetci "Evet, bıçakları tanırım. Ama o bıçaklıkta değildi. Yani... biri almıştı zaten."
-                secilen_dedektif_karakteri "Bunu nereden çıkardınız? Bu sizin sorumluluğunuzdaydı. Bıçağı birine siz vermiş olabilir misiniz?"
-                "Elena keskin bir şekilde cevap verdi"
-                hizmetci "Hayır."
-                secilen_dedektif_karakteri "Anladım. Sorgu için teşekkürler Elena Hanım."
-            "Bitki özü katmanla zarar vermenin ne alakası olabilir ki? Bir ihtimal fincanın içinde bitki özünden başka bir şeyde olabilir mi Elena hanım?":
-                hizmetci "Bitki özü ve biraz şeker koydum, çayın içinde başka bir şey yoktu "
-                "Elena gözlerini kaçırır, parmakları ile oynar"
-                secilen_dedektif_karakteri "Anladım, zaten olay olduğu sırada bodruma indiğini söylüyorsun. Neden bodruma inmiştin?"
-                hizmetci "Akşam yemeği için malzeme almam gerekiyordu."
-                secilen_dedektif_karakteri "Sizi gören biri oldu mu?"
-                hizmetci "Gitmeden önce Matilda hanıma haber vermiştim."
-                secilen_dedektif_karakteri "Anladım. Mutfakta olduğunuz için bıçakların hepsini biliyor olmalısın sonuçta mutfakta çalışıyorsun. Steiner’ın ölüm sebebi bıçak yarası, buna ne diyeceksiniz?"
-                hizmetci "Evet, bıçakları tanırım. Ama o bıçaklıkta değildi. Yani... biri almıştı zaten."
-                secilen_dedektif_karakteri "Bunu nereden çıkardınız? Bu sizin sorumluluğunuzdaydı. Bıçağı birine siz vermiş olabilir misiniz?"
-                "Elena titrek bir sesle cevap verir"
-                hizmetci "Hayır..."
-                secilen_dedektif_karakteri "Anladım. Sorgu için teşekkürler Elena Hanım."
-    elif secilen_dedektif_tipi == "kadin":
+    else:
         show dedektif_k_resim at karakter_buyuk_sag with moveinright
-        secilen_dedektif_karakteri "Direkt konuya gireceğim, boş vaktimiz yok. Lukas Steiner vefat ettiği zaman elinde fincan vardı. Kahveyi sen hazırlamışsın Elena Hanım. Fincanda sadece senin parmak izlerin var. Bunu nasıl açıklarsın?"
-        hizmetci "…"
-        hizmetci "Kahveyi hazırladım evet ama sadece içine biraz bitki özü kattım. Uykusuzdu son günlerde. Ona zarar vermek istemedim."
-        menu: 
-            "Kahve içilmemiş. Bu durum için üzgün olmalısınız, sonuçta yardımcı olamadınız.":
-                hizmetci "Evet gerçekten çok üzgünüm… Bir yudum bile içse uykusuzluğuna çok iyi geleceğine emindim."
-                secilen_dedektif_karakteri "Anladım. Mutfakta olduğunuz için bıçakların hepsini biliyor olmalısın sonuçta mutfakta çalışıyorsun. Steiner’ın ölüm sebebi bıçak yarası, buna ne diyeceksiniz?"
-                hizmetci "Evet, bıçakları tanırım. Ama o bıçaklıkta değildi. Yani... biri almıştı zaten."
-                secilen_dedektif_karakteri "Bunu nereden çıkardınız? Bu sizin sorumluluğunuzdaydı. Bıçağı birine siz vermiş olabilir misiniz?"
-                "Elena keskin bir şekilde cevap verdi"
-                hizmetci "Hayır."
-                secilen_dedektif_karakteri "Anladım. Sorgu için teşekkürler Elena Hanım."
-            "Bitki özü katmanla zarar vermenin ne alakası olabilir ki? Bir ihtimal fincanın içinde bitki özünden başka bir şeyde olabilir mi Elena hanım?":
-                hizmetci "Bitki özü ve biraz şeker koydum, çayın içinde başka bir şey yoktu "
-                "Elena gözlerini kaçırır, parmakları ile oynar"
-                secilen_dedektif_karakteri "Anladım, zaten olay olduğu sırada bodruma indiğini söylüyorsun. Neden bodruma inmiştin?"
-                hizmetci "Akşam yemeği için malzeme almam gerekiyordu."
-                secilen_dedektif_karakteri "Sizi gören biri oldu mu?"
-                hizmetci "Gitmeden önce Matilda hanıma haber vermiştim."
-                secilen_dedektif_karakteri "Anladım. Mutfakta olduğunuz için bıçakların hepsini biliyor olmalısın sonuçta mutfakta çalışıyorsun. Steiner’ın ölüm sebebi bıçak yarası, buna ne diyeceksiniz?"
-                hizmetci "Evet, bıçakları tanırım. Ama o bıçaklıkta değildi. Yani... biri almıştı zaten."
-                secilen_dedektif_karakteri "Bunu nereden çıkardınız? Bu sizin sorumluluğunuzdaydı. Bıçağı birine siz vermiş olabilir misiniz?"
-                "Elena titrek bir sesle cevap verir"
-                hizmetci "Hayır..."
-                secilen_dedektif_karakteri "Anladım. Sorgu için teşekkürler Elena Hanım."
-    
+
+    secilen_dedektif_karakteri "Direkt konuya gireceğim, boş vaktimiz yok. Lukas Steiner vefat ettiği zaman elinde fincan vardı. Kahveyi sen hazırlamışsın Elena Hanım. Fincanda sadece senin parmak izlerin var. Bunu nasıl açıklarsın?"
+    hizmetci "…"
+    hizmetci "Kahveyi hazırladım evet ama sadece içine biraz bitki özü kattım. Uykusuzdu son günlerde. Ona zarar vermek istemedim."
+    menu: 
+        "Kahve içilmemiş. Bu durum için üzgün olmalısınız, sonuçta yardımcı olamadınız.":
+            hizmetci "Evet gerçekten çok üzgünüm… Bir yudum bile içse uykusuzluğuna çok iyi geleceğine emindim."
+            secilen_dedektif_karakteri "Anladım. Mutfakta olduğunuz için bıçakların hepsini biliyor olmalısın sonuçta mutfakta çalışıyorsun. Steiner’ın ölüm sebebi bıçak yarası, buna ne diyeceksiniz?"
+            hizmetci "Evet, bıçakları tanırım. Ama o bıçaklıkta değildi. Yani... biri almıştı zaten."
+            secilen_dedektif_karakteri "Bunu nereden çıkardınız? Bu sizin sorumluluğunuzdaydı. Bıçağı birine siz vermiş olabilir misiniz?"
+            "Elena keskin bir şekilde cevap verdi"
+            hizmetci "Hayır."
+            secilen_dedektif_karakteri "Anladım. Sorgu için teşekkürler Elena Hanım."
+        "Bitki özü katmanla zarar vermenin ne alakası olabilir ki? Bir ihtimal fincanın içinde bitki özünden başka bir şeyde olabilir mi Elena hanım?":
+            hizmetci "Bitki özü ve biraz şeker koydum, çayın içinde başka bir şey yoktu "
+            "Elena gözlerini kaçırır, parmakları ile oynar"
+            secilen_dedektif_karakteri "Anladım, zaten olay olduğu sırada bodruma indiğini söylüyorsun. Neden bodruma inmiştin?"
+            hizmetci "Akşam yemeği için malzeme almam gerekiyordu."
+            secilen_dedektif_karakteri "Sizi gören biri oldu mu?"
+            hizmetci "Gitmeden önce Matilda hanıma haber vermiştim."
+            secilen_dedektif_karakteri "Anladım. Mutfakta olduğunuz için bıçakların hepsini biliyor olmalısın sonuçta mutfakta çalışıyorsun. Steiner’ın ölüm sebebi bıçak yarası, buna ne diyeceksiniz?"
+            hizmetci "Evet, bıçakları tanırım. Ama o bıçaklıkta değildi. Yani... biri almıştı zaten."
+            secilen_dedektif_karakteri "Bunu nereden çıkardınız? Bu sizin sorumluluğunuzdaydı. Bıçağı birine siz vermiş olabilir misiniz?"
+            "Elena titrek bir sesle cevap verir"
+            hizmetci "Hayır..."
+            secilen_dedektif_karakteri "Anladım. Sorgu için teşekkürler Elena Hanım."
+
     jump supheliler_sorgulaniyor
 
 label sorgu_eski_sevgili:
@@ -251,23 +228,33 @@ label sorgu_eski_sevgili:
     show eski_sevgili_resim at karakter_buyuk
     if secilen_dedektif_tipi == "erkek":
         show dedektif_e_resim at karakter_buyuk_sag with moveinright
-    elif secilen_dedektif_tipi == "kadin":
+    else:
         show dedektif_k_resim at karakter_buyuk_sag with moveinright
 
-    secilen_dedektif_karakteri "Clara, Lukas'la ilişkiniz hakkında biraz konuşmak isterim. Son zamanlarda aranız nasıldı?"
-    eski_sevgili "Açıkçası, Lukas'la son zamanlarda aramız oldukça soğuktu. Onun kadınlara bakış açısı beni her zaman rahatsız etti. Soylu bir aileden geliyorum ve ailemde kadınlara değer verilir."
-    secilen_dedektif_karakteri "Ayrılma sebebiniz de bu muydu?"
-    eski_sevgili "Evet, büyük ölçüde. Bir baloda tanıştık, başta çok etkileyici gelmişti ama zamanla gerçek yüzünü gördüm. Kadınların haklarına karşı olması, benim için kabul edilemezdi."
-    secilen_dedektif_karakteri "O gece tam olarak neredeydiniz? Sizi gören biri var mı?"
-    eski_sevgili "Kütüphanedeydim, geç saate kadar orada kaldım. Kütüphaneci Bayan Miller beni gördü. O evdeki havadan uzaklaşmak istedim."
-    secilen_dedektif_karakteri "Lukas'la son görüşmenizde aranızda bir tartışma oldu mu?"
-    eski_sevgili "Evet, birkaç hafta önce tartıştık. Bana karşı çok kırıcıydı, özellikle kadın olduğum için söyledikleri ağırdı. Ama ona zarar vermek istemedim."
-    secilen_dedektif_karakteri "Lukas'ın başka düşmanları var mıydı sizce?"
-    eski_sevgili "Bence vardı. Özellikle abim Arthur, Lukas'a hiç güvenmezdi. Annem de Lukas'ın karakterinden hoşlanmazdı."
-    secilen_dedektif_karakteri "O gece eve hiç uğradınız mı?"
-    eski_sevgili "Hayır, gerçekten uğramadım. Sabah annem aradığında olanları öğrendim."
-    secilen_dedektif_karakteri "Teşekkürler Clara. Şimdilik sorularım bu kadar. Gerekirse tekrar konuşacağız."
-    eski_sevgili "Tabii, yardımcı olabildiysem ne mutlu."
+    secilen_dedektif_karakteri "Merhaba Clara hanım, Lukas’la ilişkiniz çalkantılıydı. Ne sıklıkla görüşüyordunuz?"
+    eski_sevgili "Çok... Sık sık ayrılıp barışırdık. Ama hep o terk ederdi. Beni oyuncak gibi görürdü."
+
+    menu:
+        "O gün konuştunuz mu?":
+            secilen_dedektif_karakteri "O gün konuştunuz mu?"
+            eski_sevgili "Hayır. Görüşmedik. Zaten konuşacak pek bir şeyimiz kalmamıştı."
+            secilen_dedektif_karakteri "Peki onu öldürmeyi hiç düşündünüz mü?"
+            eski_sevgili "Bir an... sadece bir an aklımdan geçti. Ama yapmadım. Yapamazdım."
+            secilen_dedektif_karakteri "Kardeşiniz Arthur çok korumacı. Onun bir şey yapmış olmasından şüpheleniyor musunuz?"
+            eski_sevgili "Arthur beni korur evet. Ama bazen fazla ileri gidebilir… Umarım bir çılgınlık yapmamıştır."
+            secilen_dedektif_karakteri "Anladım. Sorgu için teşekkürler Clara hanım."
+        "Bana biraz Lukas Steiner’ı anlatır mısınız?":
+            secilen_dedektif_karakteri "Bana biraz Lukas Steiner’ı anlatır mısınız?"
+            eski_sevgili "O bencildi. Bencilden çok narsist demek yanlış olmaz. Kendisinden başka kimsenin üstün olmadığını düşünürdü."
+            "Clara’nın gözleri dolar."
+            eski_sevgili "Ama onu çok seviyorum... hala çok seviyorum, benim biricik Lukas’ım… Sonumuz böyle olamazdı."
+            "Dedektif, Clara’ya mendil uzattı. Clara mendili alıp göz yaşlarını silerken dedektif konuştu."
+            secilen_dedektif_karakteri "Onu öldürmeyi hiç düşündünüz mü?"
+            eski_sevgili "Ne?! Saçmalamayın ne dediğimi görmüyor musunuz? Biricik Lukas’ımı nasıl öldürebilirim?!"
+            secilen_dedektif_karakteri "Kişiliği çok da iyi değilmiş sizin de dediğiniz gibi ayrıca birçok kişi Lukas Steiner’ın size kötü davrandığını söylüyor bu durumda içten içe ona kinlenmiş olabilirsiniz."
+            "Clara öfke dolu bakışlarını dedektife kilitledi."
+            eski_sevgili "Evet, belki bana kötü davrandı… belki kalbimi paramparça etti ama onu öldürecek kadar nefret etmedim! Ben sadece… sadece onun değişmesini istedim… Sevdiği bir adam gibi olmasını… Ama her defasında beni daha fazla kırdı. Bu, onu öldürmek istediğim anlamına gelmez!"
+            secilen_dedektif_karakteri "Anladım. Sorgu için teşekkürler Clara hanım."
 
     jump supheliler_sorgulaniyor
 
