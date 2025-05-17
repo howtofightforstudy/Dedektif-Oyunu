@@ -107,6 +107,7 @@ label dedektif_isim_girisi:
         secilen_dedektif_karakteri "Merhaba, ben [dedektif_isim]."
 
     jump olaylar_baslangici
+
 label olaylar_baslangici:
     scene kasaba at bg_fullscreen
     show sef_resim at karakter_buyuk_sol with dissolve
