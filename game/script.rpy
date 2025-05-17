@@ -111,13 +111,14 @@ label dedektif_isim_girisi:
 label olaylar_baslangici:
     scene kasaba at bg_fullscreen
    
+    show sef_resim at karakter_buyuk
     "Kasabamıza hoş geldiniz Dedektif [dedektif_isim] sizlerle tanışmak büyük bir onurdur. "
 
     menu:
         "Kasaba şefiyle tanış":
             if secilen_dedektif_tipi == "erkek":
                 show dedektif_e_resim at karakter_buyuk_sag with moveinright
-                secilen_dedektif_karakteri "Memnun oldum ,nasılsınız ? Dosyayı inceledim ancak bana olayı kısaca anlatır mısınız ?"
+                secilen_dedektif_karakteri "Memnun oldum ,nasılsınız? Dosyayı inceledim ancak bana olayı kısaca anlatır mısınız ?"
             elif secilen_dedektif_tipi == "kadin":
                 show dedektif_k_resim at karakter_buyuk_sag with moveinright
                 secilen_dedektif_karakteri "Memnun oldum ,nasılsınız ? Dosyayı inceledim ancak bana olayı kısaca anlatır mısınız ?"
@@ -128,5 +129,14 @@ label olaylar_baslangici:
             elif secilen_dedektif_tipi == "kadin":
                 show dedektif_k_resim at karakter_buyuk_sag with moveinright
                 secilen_dedektif_karakteri "Merhaba Şef hemen vakaya geçebilir miyiz?"
-    # Oyunun geri kalan olay örgüsü burada devam edecek...
+            
+    jump supheliler_sorgulaniyor
 
+label supheliler_sorgulaniyor: 
+    scene sorgu_odasi at bg_fullscreen
+
+    show sef_resim at karakter_buyuk
+    sef "Önce kimi sorgulamak istersiniz?"
+
+return
+    # Oyunun geri kalan olay örgüsü burada devam edecek...
