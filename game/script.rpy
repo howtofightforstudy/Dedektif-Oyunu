@@ -129,5 +129,24 @@ label olaylar_baslangici:
             elif secilen_dedektif_tipi == "kadin":
                 show dedektif_k_resim at karakter_buyuk_sag with moveinright
                 secilen_dedektif_karakteri "Merhaba Şef hemen vakaya geçebilir miyiz?"
+
+label supheliler_sorgulaniyor: 
+    scene sorgu_odasi at bg_fullscreen
+
+    show sef_resim at karakter_buyuk
+    sef "Önce kimi sorgulamak istersiniz?"
+
+    menu:
+        "Steiner köşkünün hizmetçisi Elena'yı sorgula":
+            jump sorgu_hizmetci
+        "Lukas Steiner’ın eski sevgilisi Clara’yı sorgula":
+            jump sorgu_eski_sevgili
+        "Eski sevgilisi Clara’nın abisi Arthur von eltz’i sorgula":
+            jump sorgu_eski_sevgili_abisi
+        "Anne Matilda Steiner’ı sorgula":
+            jump sorgu_kurbanin_annesi
+        "Baba Gregory Steriner’ı sorgula":
+            jump sorgu_kurbanin_babasi
+
     return
     # Oyunun geri kalan olay örgüsü burada devam edecek...
