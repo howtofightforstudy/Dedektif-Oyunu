@@ -267,7 +267,18 @@ label sorgu_eski_sevgili_abisi:
     if secilen_dedektif_tipi == "erkek":
         show dedektif_e_resim at karakter_buyuk_sag with moveinright
     else:
+<<<<<<< HEAD
         show dedektif_k_resim at karakter_buyuk_sag with moveinright
+=======
+<<<<<<< HEAD
+        show dedektif_k_resim at karakter_buyuk_sag
+        $ dedektif_adi = "[dedektif_isim]"
+
+    
+=======
+        show dedektif_k_resim at karakter_buyuk_sag with moveinright
+>>>>>>> 383706ec04dc08f01ed0edb811a0f50930cd8d82
+>>>>>>> 561e4be6b5931d6031816a4cc0f0aa97642fcdb0
 
     secilen_dedektif_karakteri "Merhaba Arthur, kız kardeşin için endişelendiğini biliyorum. Ama Lukas’a zarar verdin mi?"
     eski_sevgili_abisi "Onu tehdit ettim evet... ama ben öldürmedim."
@@ -297,6 +308,7 @@ label sorgu_eski_sevgili_abisi:
             eski_sevgili_abisi "Çünkü biliyorum! Şimdi söyledim diye ‘katil’ damgası vuracaksınız! Ama ben öldürmedim! O kahrolası herif ölümü belki hak etti ama o bıçağı ben saplamadım!"
             secilen_dedektif_karakteri "Eğer doğruyu söylüyorsanız, o zaman sizin çıkışınızdan sonra bir başkasının odaya girdiğini kanıtlamamız gerek ama eğer yalan söylüyorsanız… o zaman bu çıkışınız sadece son çırpınışınız olur."
             secilen_dedektif_karakteri "Sorgu için teşekkürler Arthur Bey."
+<<<<<<< HEAD
 =======
     show eski_sevgili_abisi_resim at karakter_buyuk_sag with moveinleft
     if secilen_dedektif_tipi == "erkek":
@@ -317,6 +329,8 @@ label sorgu_eski_sevgili_abisi:
         show dedektif_k_resim at karakter_buyuk_sag with moveinright
         
 >>>>>>> Stashed changes
+=======
+>>>>>>> 561e4be6b5931d6031816a4cc0f0aa97642fcdb0
     jump supheliler_sorgulaniyor
 
 label sorgu_kurbanin_annesi:
