@@ -149,8 +149,12 @@ label supheliler_sorgulaniyor:
 
 label sorgu_hizmetci:
     scene sorgu_odasi at bg_fullscreen
-    show hizmetci_resim at karakter_buyuk
-    hizmetci "O sabah kahveyi hazırladım ama Lukas'ın odasına kimseyi almadım."
+    if secilen_dedektif_tipi == "erkek":
+    show dedektif_e_resim at karakter_buyuk_sag with moveinright
+    secilen_dedektif_karakteri "Memnun oldum ,nasılsınız? Dosyayı inceledim ancak bana olayı kısaca anlatır mısınız ?"
+    elif secilen_dedektif_tipi == "kadin":
+    show dedektif_k_resim at karakter_buyuk_sag with moveinright
+    secilen_dedektif_karakteri "Memnun oldum ,nasılsınız ? Dosyayı inceledim ancak bana olayı kısaca anlatır mısınız ?"
     jump supheliler_sorgulaniyor
 
 label sorgu_eski_sevgili:
