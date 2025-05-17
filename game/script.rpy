@@ -261,6 +261,7 @@ label sorgu_eski_sevgili:
 
 label sorgu_eski_sevgili_abisi:
     scene sorgu_odasi at bg_fullscreen
+<<<<<<< Updated upstream
     show eski_sevgili_abisi_resim at karakter_buyuk_sol with dissolve
 
     if secilen_dedektif_tipi == "erkek":
@@ -296,6 +297,26 @@ label sorgu_eski_sevgili_abisi:
             eski_sevgili_abisi "Çünkü biliyorum! Şimdi söyledim diye ‘katil’ damgası vuracaksınız! Ama ben öldürmedim! O kahrolası herif ölümü belki hak etti ama o bıçağı ben saplamadım!"
             secilen_dedektif_karakteri "Eğer doğruyu söylüyorsanız, o zaman sizin çıkışınızdan sonra bir başkasının odaya girdiğini kanıtlamamız gerek ama eğer yalan söylüyorsanız… o zaman bu çıkışınız sadece son çırpınışınız olur."
             secilen_dedektif_karakteri "Sorgu için teşekkürler Arthur Bey."
+=======
+    show eski_sevgili_abisi_resim at karakter_buyuk_sag with moveinleft
+    if secilen_dedektif_tipi == "erkek":
+        show dedektif_e_resim at karakter_buyuk_sag with moveinright
+        secilen_dedektif_karakteri "Merhaba Arthur, kız kardeşin için endişelendiğini biliyorum. Ama Lukas’a zarar verdin mi?"
+        "Arthur şaşırdığını gizlemeye çalışır"
+        eski_sevgili_abisi "Onu tehdit ettim evet ama ben öldürmedim."
+        secilen_dedektif_karakteri "Üniformanda Lukas’a ait kan lekesi var. Bunu nasıl açıklarsın?"
+        eski_sevgili_abisi "Onu engellemeye çalıştım. O gece Clara’ya gitmeye kalktı. Aramızda boğuşma oldu  ama o sırada canlıydı."
+        menu: 
+            "Gerçekleri anlatmazsan, işini kaybedebilirsin.":
+                eski_sevgili_abisi "İşimi mi? Bu benim onurum. Ama... belki haklısın. Belki bir hata yaptım. Onu durdurmalıydım..."
+                secilen_dedektif_karakteri "Neyden bahsettiğinizi bilmiyorum ancak gerçekten şüpheli davranıyorsunuz Arthur bey."
+                eski_sevgili_abisi "Bakın… o gece Clara ağlıyordu o adi yine onu aşağılamış, küçük düşürmüştü. Dayanamadım! Lukas’a hesap sormaya gittim. Tartıştık, üstüme yürüdü ve boğuşma yaşadık ama onu orada, yerde bıraktım. Hâlâ yaşıyordu, yemin ederim!"
+            "Bitki özü katmanla zarar vermenin ne alakası olabilir ki? Bir ihtimal fincanın içinde bitki özünden başka bir şeyde olabilir mi Elena hanım?":
+                eski_sevgili_abisi 
+    elif secilen_dedektif_tipi == "kadin":
+        show dedektif_k_resim at karakter_buyuk_sag with moveinright
+        
+>>>>>>> Stashed changes
     jump supheliler_sorgulaniyor
 
 label sorgu_kurbanin_annesi:
