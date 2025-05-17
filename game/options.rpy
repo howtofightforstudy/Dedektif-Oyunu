@@ -12,7 +12,7 @@
 ##
 ## Stringi çevreleyen _(), stringin çeviriye uygun olduğu anlamına gelir.
 
-define config.name = _("dedektif oyunu")
+define config.name = _("Steiner Malikanesi Gizemi")
 
 
 ## Yukarıda yazılan başlığı ana menüde görünüp görünmeyeceğini belirler. Başlığı
@@ -23,7 +23,7 @@ define gui.show_name = True
 
 ## Oyunun versiyonu.
 
-define config.version = "1.0"
+define config.version = "1.1"
 
 
 ## Oyunun 'hakkında' ekranına yerleştirilen metin. Metni üçlü-tırnak arasına
