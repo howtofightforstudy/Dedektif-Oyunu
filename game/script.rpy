@@ -170,7 +170,6 @@ label gec:
     jump supheliler_sorgulaniyor
 
 
-
 label supheliler_sorgulaniyor: 
     scene sorgu_odasi at bg_fullscreen
 
@@ -263,7 +262,7 @@ label sorgu_eski_sevgili:
 label sorgu_eski_sevgili_abisi:
 
     scene sorgu_odasi at bg_fullscreen
-    show eski_sevgili_abisi_resim at karakter_buyuk_sol with moveinleft
+    show eski_sevgili_abisi_resim at karakter_buyuk_sag with moveinleft
     if secilen_dedektif_tipi == "erkek":
         show dedektif_e_resim at karakter_buyuk_sag with moveinright
         secilen_dedektif_karakteri "Merhaba Arthur, kız kardeşin için endişelendiğini biliyorum. Ama Lukas’a zarar verdin mi?"
@@ -277,7 +276,7 @@ label sorgu_eski_sevgili_abisi:
                 secilen_dedektif_karakteri "Neyden bahsettiğinizi bilmiyorum ancak gerçekten şüpheli davranıyorsunuz Arthur bey."
                 eski_sevgili_abisi "Bakın… o gece Clara ağlıyordu o adi yine onu aşağılamış, küçük düşürmüştü. Dayanamadım! Lukas’a hesap sormaya gittim. Tartıştık, üstüme yürüdü ve boğuşma yaşadık ama onu orada, yerde bıraktım. Hâlâ yaşıyordu, yemin ederim!"
             "Bitki özü katmanla zarar vermenin ne alakası olabilir ki? Bir ihtimal fincanın içinde bitki özünden başka bir şeyde olabilir mi Elena hanım?":
-                eski_sevgili_abisi "..."
+                eski_sevgili_abisi 
     elif secilen_dedektif_tipi == "kadin":
         show dedektif_k_resim at karakter_buyuk_sag with moveinright
         
