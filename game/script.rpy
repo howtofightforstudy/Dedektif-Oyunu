@@ -3,7 +3,7 @@ define dedektif_e = Character("Dedektif", color="#c8c8ff")
 define dedektif_k = Character("Dedektif", color="#c8c8ff")
 define hizmetci = Character("Hizmetçi", color="#c8ffc8")
 define eski_sevgili = Character("Clara", color="#c8c8ff")
-define eski_sevgilinin_abisi = Character("Arthur", color="#c8c8ff")
+define eski_sevgili_abisi = Character("Arthur", color="#c8c8ff")
 define kurbanin_annesi = Character("Matilda", color="#c8ffc8")
 define kurbanin_babasi = Character("Gregory", color="#c8ffc8")
 define sef = Character("Kasaba Şefi", color="#c8ffc8")
@@ -16,10 +16,11 @@ image dedektif_e_resim = "images/karakterler/erkek_dedektif.png"
 image dedektif_k_resim = "images/karakterler/kadin_dedektif.png"
 image hizmetci_resim = "images/karakterler/hizmetci.png"
 image eski_sevgili_resim = "images/karakterler/eski_sevgili.png"
-image eski_sevgilinin_abisi_resim = "images/karakterler/eski_sevgilinin_abisi.png"
+image eski_sevgili_abisi_resim = "images/karakterler/eski_sevgili_abisi.png"
 image kurbanin_annesi_resim = "images/karakterler/kurbanin_annesi.png"
 image kurbanin_babasi_resim = "images/karakterler/kurbanin_babasi.png"
 image sef_resim = "images/karakterler/sef.png"
+
 
 # Transform tanımlamaları
 transform karakter_buyuk:
@@ -127,5 +128,6 @@ label olaylar_baslangici:
             elif secilen_dedektif_tipi == "kadin":
                 show dedektif_k_resim at karakter_buyuk_sag with moveinright
                 secilen_dedektif_karakteri "Merhaba Şef hemen vakaya geçebilir miyiz?"
-    # Oyunun geri kalan olay örgüsü burada devam edecek...
     return
+    # Oyunun geri kalan olay örgüsü burada devam edecek...
+
