@@ -95,6 +95,7 @@ label dedektif_isim_girisi:
         $ dedektif_isim = renpy.input("Lütfen erkek dedektifin ismini girin:")
         if dedektif_isim == "":
             $ dedektif_isim = "Erkek Dedektif"
+        $ dedektif_isim = "Dedektif " + dedektif_isim
         $ secilen_dedektif_karakteri = Character(dedektif_isim, color="#c8c8ff")
         secilen_dedektif_karakteri "Merhaba, ben [dedektif_isim]."
 
@@ -103,6 +104,7 @@ label dedektif_isim_girisi:
         $ dedektif_isim = renpy.input("Lütfen kadın dedektifin ismini girin:")
         if dedektif_isim == "":
             $ dedektif_isim = "Kadın Dedektif"
+        $ dedektif_isim = "Dedektif " + dedektif_isim
         $ secilen_dedektif_karakteri = Character(dedektif_isim, color="#c8c8ff")
         secilen_dedektif_karakteri "Merhaba, ben [dedektif_isim]."
 
