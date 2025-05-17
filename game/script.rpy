@@ -110,9 +110,8 @@ label dedektif_isim_girisi:
 
 label olaylar_baslangici:
     scene kasaba at bg_fullscreen
-   
-    show sef_resim at karakter_buyuk
-    "Kasabamıza hoş geldiniz Dedektif [dedektif_isim] sizlerle tanışmak büyük bir onurdur. "
+
+
 
     menu:
         "Kasaba şefiyle tanış":
