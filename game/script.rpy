@@ -144,4 +144,3 @@ label supheliler_sorgulaniyor:
 
     return
     # Oyunun geri kalan olay örgüsü burada devam edecek...
-
