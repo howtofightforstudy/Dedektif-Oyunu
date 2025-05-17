@@ -2,6 +2,11 @@
 define dedektif_e = Character("Dedektif", color="#c8c8ff")
 define dedektif_k = Character("Dedektif", color="#c8c8ff")
 define hizmetci = Character("Hizmetçi", color="#c8ffc8")
+define clara = Character("Clara", color="#c8c8ff")
+define arthur = Character("Arthur", color="#c8c8ff")
+define kurbanin_annesi = Character("Matilda", color="#c8ffc8")
+define kurbanin_babasi = Character("Gregory", color="#c8ffc8")
+define sef = Character("Kasaba Şefi", color="#c8ffc8")
 
 # Resim tanımlamaları
 image ev = "images/ev.jpg"
@@ -54,15 +59,7 @@ label start:
 
     "Hizmetçi gözaltına alındı. Fakat o evde herkesin bir bahanesi, herkesin karanlıkta kalan bir yüzü vardı."
     "Zira bazı sırlar, kahveden bile daha acıydı."
-    show hizmetci_resim at karakter_buyuk_sol with dissolve
-
-    hizmetci "Ben kimseye zarar vermedim efendim. Sadece işimi yaptım. Kahve hazırladım, odasını temizledim ve kapıyı kapattım. Yemin ederim ben yapmadım!"
-    show dedektif_e_resim at karakter_buyuk_sag with moveinright
-    dedektif_e "Gerçekler her ne ise eninde sonunda ortaya çıkacaktır."
-    hide hizmetci_resim with dissolve
-
-    show dedektif_e_resim at karakter_buyuk with moveinright
-    dedektif_e "Bu cinayet sıradan bir cinayet değil!"
+    
     jump dedektif_secimi
 
 label dedektif_secimi:
@@ -127,4 +124,8 @@ label olaylar_baslangici:
                 show dedektif_k_resim at karakter_buyuk_sag with moveinright
                 secilen_dedektif_karakteri "Merhaba Şef hemen vakaya geçebilir miyiz?"
     # Oyunun geri kalan olay örgüsü burada devam edecek...
+
+
+label 
+
     return
