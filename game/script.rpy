@@ -116,7 +116,7 @@ label olaylar_baslangici:
         "Kasaba şefiyle tanış":
             if secilen_dedektif_tipi == "erkek":
                 show dedektif_e_resim at karakter_buyuk_sag with moveinright
-                secilen_dedektif_karakteri "Memnun oldum ,nasılsınız ? Dosyayı inceledim ancak bana olayı kısaca anlatır mısınız ?"
+                secilen_dedektif_karakteri "Memnun oldum ,nasılsınız? Dosyayı inceledim ancak bana olayı kısaca anlatır mısınız ?"
             elif secilen_dedektif_tipi == "kadin":
                 show dedektif_k_resim at karakter_buyuk_sag with moveinright
                 secilen_dedektif_karakteri "Memnun oldum ,nasılsınız ? Dosyayı inceledim ancak bana olayı kısaca anlatır mısınız ?"
