@@ -128,5 +128,6 @@ label olaylar_baslangici:
             elif secilen_dedektif_tipi == "kadin":
                 show dedektif_k_resim at karakter_buyuk_sag with moveinright
                 secilen_dedektif_karakteri "Merhaba Şef hemen vakaya geçebilir miyiz?"
+    return
     # Oyunun geri kalan olay örgüsü burada devam edecek...
 
