@@ -707,56 +707,40 @@ label sorgu_kurbanin_babasi:
 
     jump supheliler_sorgulaniyor
 
-returnkter_buyuk_sol with dissolve
-  
+label sorgu_kurbanin_babasi:
+    scene sorgu_odasi at bg_fullscreen
+    show kurbanin_babasi_resim at karakter_buyuk_sol with dissolve
+
     if secilen_dedektif_tipi == "erkek":
         show dedektif_e_resim at karakter_buyuk_sag with moveinright
     else:
         show dedektif_k_resim at karakter_buyuk_sag with moveinright
 
     secilen_dedektif_karakteri "Bay Steiner, Lukas’la son zamanlarda pek görüşmediğiniz doğru mu?"
-
     kurbanin_babasi "İşim başımdan aşkındı. Oğlum benim ilgimi hak etmiyordu zaten."
-
     secilen_dedektif_karakteri "Cinayet gecesi bodruma inmişsiniz. Neden?"
-
     kurbanin_babasi "Havadar bir yer. Sakinleşmek için inmiştim."
-
     secilen_dedektif_karakteri "Ayakkabı iziniz bulunmuş. Bu da mı tesadüf?"
-
     kurbanin_babasi "Tesadüf değil, doğruluk. Bir şey sakladığım yok, o gün bodruma indiğimi zaten söylüyorum."
-
     secilen_dedektif_karakteri "Peki kadınlara karşı tutumunuz oğlunuzunkine benziyor mu?"
-
     kurbanin_babasi "Eskiden ben de öyleydim. Ama yaşlandım... Onlara muhtacım artık. Lukas bunu kabul edemedi."
-
     menu:
         "Bana dürüst olun, Lukas’ı durdurmaya çalıştınız mı? Ona karşı ölümcül bir öfke duydunuz mu?":
             secilen_dedektif_karakteri "Bana dürüst olun, Lukas’ı durdurmaya çalıştınız mı? Ona karşı ölümcül bir öfke duydunuz mu?"
             kurbanin_babasi "Evet, öfkelendim. Bir babanın oğluna duyduğu hayal kırıklığı, sandığınızdan daha ağırdır."
-
             secilen_dedektif_karakteri "Sessizliğiniz ve geçmişiniz sizi daha da şüpheli yapıyor. Ayrıca mektubun sizin el yazınıza benzediği iddiası var."
-
             kurbanin_babasi "Ne?! Ben mi yazmışım? Güzel numara. Ama o mektubu ben değil... Matilda yazdı. Oğluna ne kadar hayal kırıklığı duyduğunu biliyordum. Belki de o beni korumaya çalışıyor, kim bilir?"
-
             secilen_dedektif_karakteri "Yani eşinizin sizi suçlamak üzere olduğunu söylüyorsunuz?"
-
             kurbanin_babasi "Hayır... Ama onu da göz önünde bulundurmanızı öneririm, dedektif. Herkesin bir sınırı vardır."
-
             secilen_dedektif_karakteri "Anladım. Sorgu için teşekkürler Gregory bey."
     
         "Eşinizin el yazısına benzeyen bir tehdit mektubu bulduk. Ama Matilda, yazının size ait olduğunu düşünüyor.":
             secilen_dedektif_karakteri "Eşinizin el yazısına benzeyen bir tehdit mektubu bulduk. Ama Matilda, yazının size ait olduğunu düşünüyor."
             kurbanin_babasi "Evet, yazı benim. Mektubu ben yazdım. Ama okumamışsınız galiba. Oğluma öldürmekten değil, değişmekten bahsediyordum. Kadınlara olan tavırlarını bırakmasını, annesine saygı duymasını istiyordum."
-
             secilen_dedektif_karakteri "Ama mektuptaki ton sert. ‘Bu ev senin mezarın olabilir’ demişsiniz."
-
             kurbanin_babasi "Sözlerin ardındaki niyeti bilmeden suçlama yapmayın. Ben Lukas’a babası olarak son kez gözdağı verdim. Ama onu öldürmek mi? Hayır, dedektif. Ben öyle biri değilim."
-
             secilen_dedektif_karakteri "Bodruma inmeniz, ayakkabı izleriniz, öfkeniz… Hepsi üst üste binince..."
-
             kurbanin_babasi "Oğluma öfkeliydim, evet. Ama öylece odasında canice bıçaklayacak kadar değil. Gerçek katili bulmak istiyorsanız, kahveye odaklanın ve bıçağa odaklanın."
-
             secilen_dedektif_karakteri "Anladım. Sorgu için teşekkürler Gregory bey."
 
         
