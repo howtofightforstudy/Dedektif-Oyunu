@@ -326,7 +326,7 @@ label sorgu_kurbanin_annesi:
             secilen_dedektif_karakteri "Yani diyorsunuz ki Gregory oğlunu tehdit etti. Bu soruşturma için oldukça önemli bir detay, Matilda Hanım."
             kurbanin_annesi "Gregory bazen susar ama öfkesini biriktirir. Bunu yapabileceğini düşünmüyorum ama... ihtimal dışı da değil."
             secilen_dedektif_karakteri "Anladım. Sorgu için teşekkürler Matilda Hanım."
-        "Belki bu mektup bir annenin çaresizliğiydi. Oğlunuzu uyarmak istemiş olabilirsiniz. Size saldırmak için değil, anlamak için buradayım."
+        "Belki bu mektup bir annenin çaresizliğiydi. Oğlunuzu uyarmak istemiş olabilirsiniz. Size saldırmak için değil, anlamak için buradayım.":
             secilen_dedektif_karakteri "Belki bu mektup bir annenin çaresizliğiydi. Oğlunuzu uyarmak istemiş olabilirsiniz. Size saldırmak için değil, anlamak için buradayım."
             kurbanin_annesi "Dedektif… Lukas benim oğlumdu. Ama o... beni defalarca küçük düşürdü. İnsanlara, özellikle kadınlara kötü davranıyordu. Onun annesi olmaktan bazen utanıyordum."
             secilen_dedektif_karakteri "Bunu anlamak kolay değil ama lütfen söyleyin. Bu mektup sizi değilse kimi işaret ediyor?"
