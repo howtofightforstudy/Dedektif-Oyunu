@@ -146,13 +146,11 @@ label supheliler_sorgulaniyor:
             jump sorgu_kurbanin_annesi
         "Kurbanın Babası (Gregory)":
             jump sorgu_kurbanin_babasi
-        "Çık":
-            return
 
 label sorgu_hizmetci:
     scene sorgu_odasi at bg_fullscreen
     show hizmetci_resim at karakter_buyuk
-    hizmetci "Ben suçsuzum! O sabah kahveyi hazırladım ama Lukas'ın odasına kimseyi almadım."
+    hizmetci "O sabah kahveyi hazırladım ama Lukas'ın odasına kimseyi almadım."
     jump supheliler_sorgulaniyor
 
 label sorgu_eski_sevgili:
@@ -178,3 +176,5 @@ label sorgu_kurbanin_babasi:
     show kurbanin_babasi_resim at karakter_buyuk
     kurbanin_babasi "Lukas ile aramızda bazı sorunlar vardı ama onu öldürecek kadar ileri gitmem."
     jump supheliler_sorgulaniyor
+
+return
