@@ -128,8 +128,4 @@ label olaylar_baslangici:
                 show dedektif_k_resim at karakter_buyuk_sag with moveinright
                 secilen_dedektif_karakteri "Merhaba Şef hemen vakaya geçebilir miyiz?"
     # Oyunun geri kalan olay örgüsü burada devam edecek...
-
-
-label 
-
     return
