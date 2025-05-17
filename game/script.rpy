@@ -150,17 +150,36 @@ label supheliler_sorgulaniyor:
 label sorgu_hizmetci:
     scene sorgu_odasi at bg_fullscreen
     if secilen_dedektif_tipi == "erkek":
-    show dedektif_e_resim at karakter_buyuk_sag with moveinright
-    secilen_dedektif_karakteri "Memnun oldum ,nasılsınız? Dosyayı inceledim ancak bana olayı kısaca anlatır mısınız ?"
+        show dedektif_e_resim at karakter_buyuk_sag with moveinright
+        secilen_dedektif_karakteri "Memnun oldum, nasılsınız? Dosyayı inceledim ancak bana olayı kısaca anlatır mısınız?"
     elif secilen_dedektif_tipi == "kadin":
-    show dedektif_k_resim at karakter_buyuk_sag with moveinright
-    secilen_dedektif_karakteri "Memnun oldum ,nasılsınız ? Dosyayı inceledim ancak bana olayı kısaca anlatır mısınız ?"
+        show dedektif_k_resim at karakter_buyuk_sag with moveinright
+        secilen_dedektif_karakteri "Memnun oldum, nasılsınız? Dosyayı inceledim ancak bana olayı kısaca anlatır mısınız?"
     jump supheliler_sorgulaniyor
 
 label sorgu_eski_sevgili:
     scene sorgu_odasi at bg_fullscreen
     show eski_sevgili_resim at karakter_buyuk
-    eski_sevgili "Lukas'la uzun zamandır konuşmuyorduk. O gece evde değildim."
+    if secilen_dedektif_tipi == "erkek":
+        show dedektif_e_resim at karakter_buyuk_sag with moveinright
+    elif secilen_dedektif_tipi == "kadin":
+        show dedektif_k_resim at karakter_buyuk_sag with moveinright
+
+    secilen_dedektif_karakteri "Clara, Lukas'la ilişkiniz hakkında biraz konuşmak isterim. Son zamanlarda aranız nasıldı?"
+    eski_sevgili "Açıkçası, Lukas'la son zamanlarda aramız oldukça soğuktu. Onun kadınlara bakış açısı beni her zaman rahatsız etti. Soylu bir aileden geliyorum ve ailemde kadınlara değer verilir."
+    secilen_dedektif_karakteri "Ayrılma sebebiniz de bu muydu?"
+    eski_sevgili "Evet, büyük ölçüde. Bir baloda tanıştık, başta çok etkileyici gelmişti ama zamanla gerçek yüzünü gördüm. Kadınların haklarına karşı olması, benim için kabul edilemezdi."
+    secilen_dedektif_karakteri "O gece tam olarak neredeydiniz? Sizi gören biri var mı?"
+    eski_sevgili "Kütüphanedeydim, geç saate kadar orada kaldım. Kütüphaneci Bayan Miller beni gördü. O evdeki havadan uzaklaşmak istedim."
+    secilen_dedektif_karakteri "Lukas'la son görüşmenizde aranızda bir tartışma oldu mu?"
+    eski_sevgili "Evet, birkaç hafta önce tartıştık. Bana karşı çok kırıcıydı, özellikle kadın olduğum için söyledikleri ağırdı. Ama ona zarar vermek istemedim."
+    secilen_dedektif_karakteri "Lukas'ın başka düşmanları var mıydı sizce?"
+    eski_sevgili "Bence vardı. Özellikle abim Arthur, Lukas'a hiç güvenmezdi. Annem de Lukas'ın karakterinden hoşlanmazdı."
+    secilen_dedektif_karakteri "O gece eve hiç uğradınız mı?"
+    eski_sevgili "Hayır, gerçekten uğramadım. Sabah annem aradığında olanları öğrendim."
+    secilen_dedektif_karakteri "Teşekkürler Clara. Şimdilik sorularım bu kadar. Gerekirse tekrar konuşacağız."
+    eski_sevgili "Tabii, yardımcı olabildiysem ne mutlu."
+
     jump supheliler_sorgulaniyor
 
 label sorgu_eski_sevgili_abisi:
