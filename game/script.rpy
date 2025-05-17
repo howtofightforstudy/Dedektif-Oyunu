@@ -141,12 +141,11 @@ label olaylar_baslangici:
         jump gec
 
 label tanis:
-    show sef_resim at karakter_buyuk_sag
-
+    show sef_resim at karakter_buyuk_sol with dissolve
     sef "İyiyim, umarım siz de iyisinizdir... Dedektif, sabah saatlerinde bağırışlar üzerine yukarı çıktık. Lukas Steiner odasında ölü bulundu."
-    "Göğsünde derin bir bıçak yarası vardı. Yanında da dokunulmamış bir kahve fincanı..."
-    "Parmak izleri hizmetçiye aitmiş ama kız kahveyi içmeden bırakmış. Hizmetçi zehir koyduğunu kabul ediyor ama 'öldürmedim' diyor."
-    "O evde herkesin bir bahanesi var ama hiçbiri temiz değil, bilesiniz."
+    sef "Göğsünde derin bir bıçak yarası vardı. Yanında da dokunulmamış bir kahve fincanı..."
+    sef "Parmak izleri hizmetçiye aitmiş ama kız kahveyi içmeden bırakmış. Hizmetçi zehir koyduğunu kabul ediyor ama 'öldürmedim' diyor."
+    sef "O evde herkesin bir bahanesi var ama hiçbiri temiz değil, bilesiniz."
     
 
     if secilen_dedektif_tipi == "erkek":
@@ -159,7 +158,7 @@ label tanis:
     jump supheliler_sorgulaniyor
 
 label gec:
-    show sef_resim at karakter_buyuk_sag
+    show sef_resim at karakter_buyuk_sol with dissolve
     sef "Anladım Dedektif. O zaman hemen vakaya geçelim..."
     if secilen_dedektif_tipi == "erkek":
         show dedektif_e_resim at karakter_buyuk_sag with moveinright
@@ -264,81 +263,24 @@ label sorgu_eski_sevgili:
 label sorgu_eski_sevgili_abisi:
 
     scene sorgu_odasi at bg_fullscreen
-    show eski_sevgili_abisi_resim at karakter_buyuk_sol with dissolve
-
+    show eski_sevgili_abisi_resim at karakter_buyuk_sol with moveinleft
     if secilen_dedektif_tipi == "erkek":
-        show dedektif_e_resim at karakter_buyuk_sag
-        $ dedektif_adi = "[dedektif_isim]"
-    else:
-        show dedektif_k_resim at karakter_buyuk_sag
-        $ dedektif_adi = "[dedektif_isim]"
-
-    $ secilen_dedektif_karakteri = dedektif_adi + ":"
-
-    secilen_dedektif_karakteri "Merhaba Arthur, kız kardeşin için endişelendiğini biliyorum. Ama Lukas’a zarar verdin mi?"
-
-    eski_sevgili_abisi "Onu tehdit ettim evet... ama ben öldürmedim."
-
-    secilen_dedektif_karakteri "Üniformanda Lukas’a ait kan lekesi var. Bunu nasıl açıklarsın?"
-
-    eski_sevgili_abisi "Onu engellemeye çalıştım. O gece Clara’ya gitmeye kalktı. Aramızda boğuşma oldu... ama o sırada canlıydı."
-
-    menu:
-        "Gerçekleri anlatmazsan, işini kaybedebilirsin":
-            if secilen_dedektif_tipi == "erkek":
-                secilen_dedektif_karakteri "Bir gün öncesinde buluştuğunuza dair bir bilgilendirme almadım. Köşk hizmetçileri cinayetin işlendiği sabah geldiğinizi ve Lukas Steiner’la sohbet etmek için odasına gittiğinizi söylüyor."
-            else:
-                secilen_dedektif_karakteri "Bir gün öncesinde buluştuğunuza dair bir bilgilendirme almadım. Köşk hizmetçileri cinayetin işlendiği sabah geldiğinizi ve Lukas Steiner’la sohbet etmek için odasına gittiğinizi söylüyor."
-
-            eski_sevgili_abisi "Ne ima etmeye çalışıyorsunuz, ha?!"
-            eski_sevgili_abisi "Kardeşim o adamın elinde oyuncak oldu yıllarca! Onun ne yaptığını, nasıl aşağıladığını bilmiyorsunuz!"
-            eski_sevgili_abisi "Evet, Lukas’la o sabah görüştüm!"
-
-            secilen_dedektif_karakteri "Neden aranızda bir boğuşma oldu?"
-
-            eski_sevgili_abisi "Evet, onunla boğuştum ama öldürmedim! Eğer onu bıçaklayan biri varsa, belki de yıllardır içlerinde biriken nefreti artık taşıyamayan biridir! Ama ben değilim! Ben sadece... Clara’yı korumaya çalıştım! Suç mu bu?!"
-
-            secilen_dedektif_karakteri "Sakin olun Arthur. Ben burada sizinle kavga etmeye gelmedim. Ama siz şu an bana, kontrolünü kaybedebilen bir adamın resmini çiziyorsunuz. Bu kontrolsüzlük… bir bıçağı göğse saplamaya ne kadar uzak olabilir ki?"
-
-            eski_sevgili_abisi "Ben bir askerim, dedektif! Kraliyet muhafızıyım! Duygularımla hareket edecek kadar acemi değilim. Onun gibi pisliklere karşı bile!"
-
-            secilen_dedektif_karakteri "Ve askerlik onuru bazen aile onurunun gerisinde kalmaz mı? Mesela bir adam, kız kardeşinin onurunu kurtarmak için kan dökmeyi göze almaz mı?"
-
-            eski_sevgili_abisi "Siz ne bilirsiniz aileyi, onuru, çaresizliği?! O herife kaç kez söyledim kardeşimden uzak dur diye ama dinlemedi."
-            eski_sevgili_abisi "O gece Clara odasında ağlıyordu. Gittim Lukas’ın yüzüne tükürdüm… bir de sadece yumruk attım. Bıçak falan yoktu! Ona zarar vermek isteseydim... çok daha fazlasını yapardım."
-
-            secilen_dedektif_karakteri "Demek yumruk attınız. Bu ilk kez duyduğum bir detay. Neden şimdi söylüyorsunuz?"
-
-            eski_sevgili_abisi "Çünkü biliyorum! Şimdi söyledim diye ‘katil’ damgası vuracaksınız! Ama ben öldürmedim! O kahrolası herif ölümü belki hak etti ama o bıçağı ben saplamadım!"
-
-            secilen_dedektif_karakteri "Bana o gece orada olduğunuzu kanıtlayacak birini söyler misiniz?"
-
-            eski_sevgili_abisi "Köşkteki hizmetçi Elena o gün beni içeri almıştı."
-
-            secilen_dedektif_karakteri "Eğer doğruyu söylüyorsanız, o zaman sizin çıkışınızdan sonra bir başkasının odaya girdiğini kanıtlamamız gerek ama eğer yalan söylüyorsanız… o zaman bu çıkışınız sadece son çırpınışınız olur."
-            secilen_dedektif_karakteri "Sorgu için teşekkürler Arthur Bey."
-
-        "Neden aranızda bir boğuşma oldu? Ayrıca bir gün öncesinde buluştuğunuza dair bir bilgilendirme almadım. Köşk hizmetçileri cinayetin işlendiği sabah geldiğinizi ve Lukas Steiner’la sohbet etmek için odasına gittiğinizi söylüyor":
-            eski_sevgili_abisi "Ne ima etmeye çalışıyorsunuz, ha?!"
-            eski_sevgili_abisi "Kardeşim o adamın elinde oyuncak oldu yıllarca! Onun ne yaptığını, nasıl aşağıladığını bilmiyorsunuz!"
-            eski_sevgili_abisi "Evet, Lukas’la o sabah görüştüm! Evet, onunla boğuştum ama öldürmedim! Eğer onu bıçaklayan biri varsa, belki de yıllardır içlerinde biriken nefreti artık taşıyamayan biridir! Ama ben değilim! Ben sadece... Clara’yı korumaya çalıştım! Suç mu bu?!"
-
-            secilen_dedektif_karakteri "Sakin olun Arthur. Ben burada sizinle kavga etmeye gelmedim. Ama siz şu an bana, kontrolünü kaybedebilen bir adamın resmini çiziyorsunuz. Bu kontrolsüzlük… bir bıçağı göğse saplamaya ne kadar uzak olabilir ki?"
-
-            eski_sevgili_abisi "Ben bir askerim, dedektif! Kraliyet muhafızıyım! Duygularımla hareket edecek kadar acemi değilim. Onun gibi pisliklere karşı bile!"
-
-            secilen_dedektif_karakteri "Ve askerlik onuru bazen aile onurunun gerisinde kalmaz mı? Mesela bir adam, kız kardeşinin onurunu kurtarmak için kan dökmeyi göze almaz mı?"
-
-            eski_sevgili_abisi "Siz ne bilirsiniz aileyi, onuru, çaresizliği?! O herife kaç kez söyledim kardeşimden uzak dur diye ama dinlemedi."
-            eski_sevgili_abisi "O gece Clara odasında ağlıyordu. Gittim Lukas’ın yüzüne tükürdüm… bir de sadece yumruk attım. Bıçak falan yoktu! Ona zarar vermek isteseydim... çok daha fazlasını yapardım."
-
-            secilen_dedektif_karakteri "Demek yumruk attınız. Bu ilk kez duyduğum bir detay. Neden şimdi söylüyorsunuz?"
-
-            eski_sevgili_abisi "Çünkü biliyorum! Şimdi söyledim diye ‘katil’ damgası vuracaksınız! Ama ben öldürmedim! O kahrolası herif ölümü belki hak etti ama o bıçağı ben saplamadım!"
-
-            secilen_dedektif_karakteri "Eğer doğruyu söylüyorsanız, o zaman sizin çıkışınızdan sonra bir başkasının odaya girdiğini kanıtlamamız gerek ama eğer yalan söylüyorsanız… o zaman bu çıkışınız sadece son çırpınışınız olur."
-            secilen_dedektif_karakteri "Sorgu için teşekkürler Arthur Bey."
-
+        show dedektif_e_resim at karakter_buyuk_sag with moveinright
+        secilen_dedektif_karakteri "Merhaba Arthur, kız kardeşin için endişelendiğini biliyorum. Ama Lukas’a zarar verdin mi?"
+        "Arthur şaşırdığını gizlemeye çalışır"
+        eski_sevgili_abisi "Onu tehdit ettim evet ama ben öldürmedim."
+        secilen_dedektif_karakteri "Üniformanda Lukas’a ait kan lekesi var. Bunu nasıl açıklarsın?"
+        eski_sevgili_abisi "Onu engellemeye çalıştım. O gece Clara’ya gitmeye kalktı. Aramızda boğuşma oldu  ama o sırada canlıydı."
+        menu: 
+            "Gerçekleri anlatmazsan, işini kaybedebilirsin.":
+                eski_sevgili_abisi "İşimi mi? Bu benim onurum. Ama... belki haklısın. Belki bir hata yaptım. Onu durdurmalıydım..."
+                secilen_dedektif_karakteri "Neyden bahsettiğinizi bilmiyorum ancak gerçekten şüpheli davranıyorsunuz Arthur bey."
+                eski_sevgili_abisi "Bakın… o gece Clara ağlıyordu o adi yine onu aşağılamış, küçük düşürmüştü. Dayanamadım! Lukas’a hesap sormaya gittim. Tartıştık, üstüme yürüdü ve boğuşma yaşadık ama onu orada, yerde bıraktım. Hâlâ yaşıyordu, yemin ederim!"
+            "Bitki özü katmanla zarar vermenin ne alakası olabilir ki? Bir ihtimal fincanın içinde bitki özünden başka bir şeyde olabilir mi Elena hanım?":
+                eski_sevgili_abisi "..."
+    elif secilen_dedektif_tipi == "kadin":
+        show dedektif_k_resim at karakter_buyuk_sag with moveinright
+        
     jump supheliler_sorgulaniyor
 
 label sorgu_kurbanin_annesi:
