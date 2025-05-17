@@ -300,8 +300,35 @@ label sorgu_eski_sevgili_abisi:
 
 label sorgu_kurbanin_annesi:
     scene sorgu_odasi at bg_fullscreen
-    show kurbanin_annesi_resim at karakter_buyuk
-    kurbanin_annesi "Oğlumun başına gelenler için çok üzgünüm. O sabah ben mutfaktaydım."
+    show kurbanin_annesi_resim at karakter_buyuk_sol with dissolve
+
+    if secilen_dedektif_tipi == "erkek":
+        show dedektif_e_resim at karakter_buyuk_sag with moveinright
+    else:
+        show dedektif_k_resim at karakter_buyuk_sag with moveinright
+
+    secilen_dedektif_karakteri "Bayan Steiner, oğlunuzun ölümüne üzülüyor musunuz?"
+    kurbanin_annesi "Üzgünüm elbette. Ama size bir sır vereyim dedektif… Oğlumun karakteri bozuktu. Kadınlara saygısı yoktu. Belki bu onun sonuydu."
+    secilen_dedektif_karakteri "Oğlunuza karşı öfke duyduğunuz oldu mu?"
+    kurbanin_annesi "Evet. Ama bir anne öfkeyle cinayet işlemez. Sessizce utançla bekler sadece..."
+    secilen_dedektif_karakteri "Bu mektup... Lukas’a yazılmış tehditlerle dolu. Yazı stilinizle eşleşiyor."
+    kurbanin_annesi "Ben yazmadım. Ama kimin yazdığını tahmin edebiliyorum."
+    menu:
+        "Eğer kimin yazdığını biliyorsanız, söylemek zorundasınız Matilda Hanım. Aksi halde sizi gizli tanık değil, şüpheli olarak ele alırım."
+            secilen_dedektif_karakteri "Eğer kimin yazdığını biliyorsanız, söylemek zorundasınız Matilda Hanım. Aksi halde sizi gizli tanık değil, şüpheli olarak ele alırım."
+            kurbanin_annesi "Beni tehdit mi ediyorsunuz, dedektif?"
+            secilen_dedektif_karakteri "Hayır, sadece gerçeği arıyorum. Ve siz o gerçeği saklıyorsunuz gibi görünüyor."
+            "Matilda Steiner’ın gözleri dolar ve kısık sesle konuşur"
+            kurbanin_annesi "Tamam… Tamam… O mektubu ben yazmadım… ama kimin yazdığını biliyorum. Kocam… Gregory"
+            secilen_dedektif_karakteri "Gregory mi? Lukas’ın babası?"
+            kurbanin_annesi "Evet. Gregory, Lukas’ın kadınlara olan tavırlarına eskiden göz yumar, hatta desteklerdi. Ama yaşlandıkça... değişti." 
+            kurbanin_annesi "Bir gece Lukas bana bağırırken Gregory odaya girdi ve ‘bir daha annene sesini yükselttiğini duyarsam, bu ev senin için mezar olur’ dedi."
+            secilen_dedektif_karakteri "Yani diyorsunuz ki Gregory oğlunu tehdit etti. Bu soruşturma için oldukça önemli bir detay, Matilda Hanım."
+            kurbanin_annesi "Gregory bazen susar ama öfkesini biriktirir. Bunu yapabileceğini düşünmüyorum ama... ihtimal dışı da değil."
+            secilen_dedektif_karakteri "Anladım. Sorgu için teşekkürler Matilda Hanım."
+        "Belki bu mektup bir annenin çaresizliğiydi. Oğlunuzu uyarmak istemiş olabilirsiniz. Size saldırmak için değil, anlamak için buradayım."
+            secilen_dedektif_karakteri "Belki bu mektup bir annenin çaresizliğiydi. Oğlunuzu uyarmak istemiş olabilirsiniz. Size saldırmak için değil, anlamak için buradayım."
+            
     jump supheliler_sorgulaniyor
 
 label sorgu_kurbanin_babasi:
