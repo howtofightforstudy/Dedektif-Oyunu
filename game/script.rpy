@@ -147,7 +147,6 @@ label tanis:
     sef "Parmak izleri hizmetçiye aitmiş ama kız kahveyi içmeden bırakmış. Hizmetçi zehir koyduğunu kabul ediyor ama 'öldürmedim' diyor."
     sef "O evde herkesin bir bahanesi var ama hiçbiri temiz değil, bilesiniz."
     
-
     if secilen_dedektif_tipi == "erkek":
         show dedektif_e_resim at karakter_buyuk_sag
     else:
@@ -176,7 +175,7 @@ label supheliler_sorgulaniyor:
     show sef at karakter_buyuk
     sef "Kimi sorgulamak istersiniz?"
     menu:
-        "Hizmetçi":
+        "Hizmetçi (Elena)":
             jump sorgu_hizmetci
         "Eski Sevgili (Clara)":
             jump sorgu_eski_sevgili
@@ -186,6 +185,8 @@ label supheliler_sorgulaniyor:
             jump sorgu_kurbanin_annesi
         "Kurbanın Babası (Gregory)":
             jump sorgu_kurbanin_babasi
+        "Suçluyu Belirle":
+            jump sucluyu_sec
 
 label sorgu_hizmetci:
     scene sorgu_odasi at bg_fullscreen
@@ -370,5 +371,45 @@ label sorgu_kurbanin_babasi:
             secilen_dedektif_karakteri "Anladım. Sorgu için teşekkürler Gregory bey."
     jump supheliler_sorgulaniyor
 
+label sucluyu_sec:
+    scene sorgu_odasi at bg_fullscreen
+    show sef_resim at karakter_buyuk_sol with dissolve
+    sef "[dedektif_isim] gösterdiğiniz yoğun çaba için teşekkürler şimdi yaptığınız sorgulamalara göre kesin olarak suçluyu bulduk diyebilir misiniz?"
+    menu:
+        "Evet":
+            sef "[dedektif_isim] suçlu kim?"
+            menu:
+                "Hizmetçiyi (Elena) suçla":
+                    jump suclu_hizmetci
+                "Eski sevgilinin abisini (Arthur) suçla":
+                    jump suclu_eski_sevgilinin_abisi
+                "Delil yetersiz, suçlu ilan etme":
+                    jump suclu_yok
+                "Kurbanın annesini (Matilda) suçla":
+                    jump suclu_kurbanin_annesi
+                "Kurbanın babasını (Gregory) suçla":
+                    jump suclu_kurbanin_babasi
+        "Emin Değilim...":
+            sef "Sorguları yeniden dinlemek ister misin?"
+            menu:
+                "Evet":
+                    jump supheliler_sorgulaniyor
+                "Hayır":
+                    jump sucluyu_sec
 
+label suclu_hizmetci:
+    scene sorgu_odasi at bg_fullscreen
+    "Dedektif Elena'nın mutfağa erişimini, kahvedeki parmak izini ve zehir itirafını yeterli kanıt olarak görür."
+label suclu_eski_sevgilinin_abisi:
+    scene sorgu_odasi at bg_fullscreen
+    "Dedektif Arthur’un tutumunu, kız kardeşini koruma dürtüsünü ve baskıya verdiği tepkiyi dikkate alır."
+label suclu_yok:
+    scene sorgu_odasi at bg_fullscreen
+    "Oyuncu tüm bilgiler ışığında kesin bir karara varmaz. Kanıtların çelişkili olduğuna inanır."
+label suclu_kurbanin_annesi:
+    scene sorgu_odasi at bg_fullscreen
+    "Dedektif mektuptaki el yazısı, bastırılmış öfke ve suçlayıcı geçmişi delil olarak görür."
+label suclu_kurbanin_babasi:
+    scene sorgu_odasi at bg_fullscreen
+    "Dedektif Gregory’nin bodrumdaki hareketlerini, ayakkabı izlerini ve geçmiş davranışlarını yeterli görür."
 return
