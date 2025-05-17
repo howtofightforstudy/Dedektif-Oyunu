@@ -138,9 +138,5 @@ label supheliler_sorgulaniyor:
     show sef_resim at karakter_buyuk
     sef "Önce kimi sorgulamak istersiniz?"
 
-
-
-
-
-    return
+return
     # Oyunun geri kalan olay örgüsü burada devam edecek...
