@@ -129,13 +129,53 @@ label olaylar_baslangici:
             elif secilen_dedektif_tipi == "kadin":
                 show dedektif_k_resim at karakter_buyuk_sag with moveinright
                 secilen_dedektif_karakteri "Merhaba Şef hemen vakaya geçebilir miyiz?"
-            
+
     jump supheliler_sorgulaniyor
 
 label supheliler_sorgulaniyor: 
     scene sorgu_odasi at bg_fullscreen
-
-    show sef_resim at karakter_buyuk
     sef "Önce kimi sorgulamak istersiniz?"
 
-    return
+    menu:
+        "Hizmetçi":
+            jump sorgu_hizmetci
+        "Eski Sevgili (Clara)":
+            jump sorgu_eski_sevgili
+        "Eski Sevgilinin Abisi (Arthur)":
+            jump sorgu_eski_sevgili_abisi
+        "Kurbanın Annesi (Matilda)":
+            jump sorgu_kurbanin_annesi
+        "Kurbanın Babası (Gregory)":
+            jump sorgu_kurbanin_babasi
+        "Çık":
+            return
+
+label sorgu_hizmetci:
+    scene sorgu_odasi at bg_fullscreen
+    show hizmetci_resim at karakter_buyuk
+    hizmetci "Ben suçsuzum! O sabah kahveyi hazırladım ama Lukas'ın odasına kimseyi almadım."
+    jump supheliler_sorgulaniyor
+
+label sorgu_eski_sevgili:
+    scene sorgu_odasi at bg_fullscreen
+    show eski_sevgili_resim at karakter_buyuk
+    eski_sevgili "Lukas'la uzun zamandır konuşmuyorduk. O gece evde değildim."
+    jump supheliler_sorgulaniyor
+
+label sorgu_eski_sevgili_abisi:
+    scene sorgu_odasi at bg_fullscreen
+    show eski_sevgili_abisi_resim at karakter_buyuk
+    eski_sevgili_abisi "Kız kardeşimi üzmeseydi, belki hâlâ hayatta olurdu. Ama ben ona zarar vermedim."
+    jump supheliler_sorgulaniyor
+
+label sorgu_kurbanin_annesi:
+    scene sorgu_odasi at bg_fullscreen
+    show kurbanin_annesi_resim at karakter_buyuk
+    kurbanin_annesi "Oğlumun başına gelenler için çok üzgünüm. O sabah ben mutfaktaydım."
+    jump supheliler_sorgulaniyor
+
+label sorgu_kurbanin_babasi:
+    scene sorgu_odasi at bg_fullscreen
+    show kurbanin_babasi_resim at karakter_buyuk
+    kurbanin_babasi "Lukas ile aramızda bazı sorunlar vardı ama onu öldürecek kadar ileri gitmem."
+    jump supheliler_sorgulaniyor
