@@ -6,9 +6,11 @@ define hizmetci = Character("Hizmetçi", color="#c8ffc8")
 # Resim tanımlamaları
 image ev = "images/ev.jpg"
 image sorgu_odasi = "images/sorgu_odasi.png"
+image kasaba = "images/kasaba.png"
 image dedektif_e_resim = "images/karakterler/erkek_dedektif.png"
 image dedektif_k_resim = "images/karakterler/kadin_dedektif.png"
 image hizmetci_resim = "images/karakterler/hizmetci.png"
+
 
 # Transform tanımlamaları
 transform karakter_buyuk:
@@ -105,17 +107,24 @@ label dedektif_isim_girisi:
     jump olaylar_baslangici
 
 label olaylar_baslangici:
-    scene sorgu_odasi at bg_fullscreen
+    scene kasaba at bg_fullscreen
+   
+    "Kasabamıza hoş geldiniz Dedektif [dedektif_isim] sizlerle tanışmak büyük bir onurdur. "
 
-    show hizmetci_resim at karakter_buyuk_sol with dissolve
-    hizmetci "Neden beni buraya getirdiniz? Ne istiyorsunuz benden?"
-
-    if secilen_dedektif_tipi == "erkek":
-        show dedektif_e_resim at karakter_buyuk_sag with moveinright
-        secilen_dedektif_karakteri "Sakin olun, neler olduğunu anlatın."
-    elif secilen_dedektif_tipi == "kadin":
-        show dedektif_k_resim at karakter_buyuk_sag with moveinright
-        secilen_dedektif_karakteri "Sakin olun, neler olduğunu anlatın."
-
+    menu:
+        "Kasaba şefiyle tanış":
+            if secilen_dedektif_tipi == "erkek":
+                show dedektif_e_resim at karakter_buyuk_sag with moveinright
+                secilen_dedektif_karakteri "Memnun oldum ,nasılsınız ? Dosyayı inceledim ancak bana olayı kısaca anlatır mısınız ?"
+            elif secilen_dedektif_tipi == "kadin":
+                show dedektif_k_resim at karakter_buyuk_sag with moveinright
+                secilen_dedektif_karakteri "Memnun oldum ,nasılsınız ? Dosyayı inceledim ancak bana olayı kısaca anlatır mısınız ?"
+        "Direkt vakaya geç":
+            if secilen_dedektif_tipi == "erkek":
+                show dedektif_e_resim at karakter_buyuk_sag with moveinright
+                secilen_dedektif_karakteri "Merhaba Şef hemen vakaya geçebilir miyiz?"
+            elif secilen_dedektif_tipi == "kadin":
+                show dedektif_k_resim at karakter_buyuk_sag with moveinright
+                secilen_dedektif_karakteri "Merhaba Şef hemen vakaya geçebilir miyiz?"
     # Oyunun geri kalan olay örgüsü burada devam edecek...
     return
