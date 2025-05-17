@@ -169,6 +169,13 @@ label gec:
     jump supheliler_sorgulaniyor
 
 
+# Oyun değişkenleri
+default sorgu_hizmetci_dinlendi = False
+default sorgu_eski_sevgili_dinlendi = False
+default sorgu_eski_sevgili_abisi_dinlendi = False
+default sorgu_kurbanin_annesi_dinlendi = False
+default sorgu_kurbanin_babasi_dinlendi = False
+
 label supheliler_sorgulaniyor: 
     scene sorgu_odasi at bg_fullscreen
 
@@ -176,16 +183,21 @@ label supheliler_sorgulaniyor:
     sef "Kimi sorgulamak istersiniz?"
     menu:
         "Hizmetçi (Elena)":
+            $ sorgu_hizmetci_dinlendi = True
             jump sorgu_hizmetci
         "Eski Sevgili (Clara)":
+            $ sorgu_eski_sevgili_dinlendi = True
             jump sorgu_eski_sevgili
         "Eski Sevgilinin Abisi (Arthur)":
+            $ sorgu_eski_sevgili_abisi_dinlendi = True
             jump sorgu_eski_sevgili_abisi
         "Kurbanın Annesi (Matilda)":
+            $ sorgu_kurbanin_annesi_dinlendi = True
             jump sorgu_kurbanin_annesi
         "Kurbanın Babası (Gregory)":
+            $ sorgu_kurbanin_babasi_dinlendi = True
             jump sorgu_kurbanin_babasi
-        "Suçluyu Belirle":
+        "Suçluyu Belirle" if sorgu_hizmetci_dinlendi and sorgu_eski_sevgili_dinlendi and sorgu_eski_sevgili_abisi_dinlendi and sorgu_kurbanin_annesi_dinlendi and sorgu_kurbanin_babasi_dinlendi:
             jump sucluyu_sec
 
 label sorgu_hizmetci:
@@ -210,7 +222,7 @@ label sorgu_hizmetci:
             hizmetci "Hayır."
             secilen_dedektif_karakteri "Anladım. Sorgu için teşekkürler Elena Hanım."
         "Bitki özü katmanla zarar vermenin ne alakası olabilir ki? Bir ihtimal fincanın içinde bitki özünden başka bir şeyde olabilir mi Elena hanım?":
-            hizmetci "Bitki özü ve biraz şeker koydum, çayın içinde başka bir şey yoktu "
+            hizmetci "Bitki özü ve biraz şeker koydum, kahvenin içinde başka bir şey yoktu "
             "Elena gözlerini kaçırır, parmakları ile oynar"
             secilen_dedektif_karakteri "Anladım, zaten olay olduğu sırada bodruma indiğini söylüyorsun. Neden bodruma inmiştin?"
             hizmetci "Akşam yemeği için malzeme almam gerekiyordu."
@@ -397,19 +409,102 @@ label sucluyu_sec:
                 "Hayır":
                     jump sucluyu_sec
 
-label suclu_hizmetci:
-    scene sorgu_odasi at bg_fullscreen
-    "Dedektif Elena'nın mutfağa erişimini, kahvedeki parmak izini ve zehir itirafını yeterli kanıt olarak görür."
 label suclu_eski_sevgilinin_abisi:
     scene sorgu_odasi at bg_fullscreen
-    "Dedektif Arthur’un tutumunu, kız kardeşini koruma dürtüsünü ve baskıya verdiği tepkiyi dikkate alır."
+    jump son1
+
+label suclu_hizmetci:
+    scene sorgu_odasi at bg_fullscreen
+    jump son2
+
 label suclu_yok:
     scene sorgu_odasi at bg_fullscreen
-    "Oyuncu tüm bilgiler ışığında kesin bir karara varmaz. Kanıtların çelişkili olduğuna inanır."
+    jump son3
+
 label suclu_kurbanin_annesi:
     scene sorgu_odasi at bg_fullscreen
-    "Dedektif mektuptaki el yazısı, bastırılmış öfke ve suçlayıcı geçmişi delil olarak görür."
+    jump son4
+
 label suclu_kurbanin_babasi:
     scene sorgu_odasi at bg_fullscreen
-    "Dedektif Gregory’nin bodrumdaki hareketlerini, ayakkabı izlerini ve geçmiş davranışlarını yeterli görür."
-return
+    jump son5
+
+# --- SONLAR ---
+
+label son1:
+    scene sorgu_odasi at bg_fullscreen
+    show eski_sevgili_abisi_resim at karakter_buyuk with dissolve
+    "Dedektifin zihninde, parçalar nihayet birleşti. Yudumlanmamış kahve, hizmetçinin paniklemiş bakışları, Arthur’un korumacı öfkesi ve Clara’nın suskunluğu..."
+    "Dedektif hizmetçiyi tekrar sorgular. Elena zehri koyduğunu kabul eder ancak o anda cinayetin bıçakla işlendiği hatırlatılır. Bu detayla birlikte, gerçek niyetin zehirle öldürmek olduğu ortaya çıkar."
+    "Ancak kahve içilmediği için plan boşa çıkmıştır."
+    "Bu noktada Arthur’un baskıya dayanamayıp yaptığı itiraf devreye girer:"
+    "Arthur: 'O… Clara’yı üzüyordu. Onu her gördüğümde dişlerimi sıkıyordum. O gece… gözüm döndü. Sadece durdurmak istedim. Ama elimdeki bıçak...'"
+
+    "Kasaba Şefi: 'Tebrik ederim dedektif, sayende Steiner vakasını çözebildik. Soruşturmaya göre sana gerçeği açıklayacağım.'"
+    "Kasaba Şefi: 'Zehir planını hizmetçi Elena kurmuş ama ölümcül darbe Arthur von Eltz’den geldi.'"
+    "Kasaba Şefi: 'Clara’nın hareketlerinden de anlaşılacağı üzere planı biliyor ama susturulmuş. Bu da onu işbirlikçi yapar.'"
+    "Kasaba Şefi: 'Lukas Steiner, nefretle çevrili bir adamdı. Öldürülmesi bireysel bir öfkenin değil, bir zincirin sonucudur.'"
+    secilen_dedektif_karakteri "Bir kahve fincanı. İçilmeyen bir kahve. Ve bir adam… çok fazla düşmana sahip bir adam."
+    "Katil bulundu, Arthur tutuklanır."
+    "Clara ve hizmetçi ise 'delil yetersizliğinden' serbest bırakılır ama şehirden ayrılmak zorunda kalırlar."
+    "Dedektif raporuna şöyle yazar:"
+    "Bu dava kapandı. Ama Steiner’ın gölgesi... başka hayatları da karartmış olabilir."
+    "Bu sona değil, bir başlangıca benziyor."
+    return
+
+label son2:
+    scene sorgu_odasi at bg_fullscreen
+    show hizmetci_resim at karakter_buyuk with dissolve
+    "Deliller hizmetçiyi gösteriyordu. Zehirli kahve, mutfak bilgisi, parmak izi. Başka ne gerekiyordu ki?"
+    "Dedektif, Elena’yı cinayetle suçlar. Hizmetçi gözyaşlarıyla bağırır:"
+    "Elena: 'Hayır! Yemin ederim ben öldürmedim. Ben sadece... onu biraz korkutmak istedim!'"
+    "Clara ağlar, Arthur dişlerini sıkar ama hiçbir şey söylemez. Dedektif, 'iş tamam' diye düşünür."
+    "Aylar sonra, bir mektup gelir dedektife. Anonim:"
+    "'Hizmetçi suçlu değildi. Cinayet, bir koruyucunun öfkesiydi. Sen yanlış kişiyi mahkum ettin. Şimdi onun kanı da senin vicdanında.'"
+    "Hizmetçi hapse girer, Clara ve Arthur sessizce yaşamlarına devam eder."
+    "Dedektifin itibarı sorgulanır."
+    "Yerel gazete: 'Dedektif, yanlış kadını içeri tıktı mı? Kahve fincanı mı yoksa bir bıçak mı gerçek delildi?'"
+    return
+
+label son3:
+    scene sorgu_odasi at bg_fullscreen
+    if secilen_dedektif_tipi == "erkek":
+        show dedektif_e_resim at karakter_buyuk with dissolve
+    else:
+        show dedektif_k_resim at karakter_buyuk with dissolve
+    "Hiçbir şey tam olarak uyuşmuyor. Parmak izi, ama içilmemiş kahve. İtiraf, ama yanlış silah. Öfke, ama suskunluk…"
+    "Dedektif hiçbir şüpheliyi suçlayamaz. Elindeki kanıtlar her birini işaret eder ama aynı anda hiç kimseyi de net olarak göstermez."
+    "Savcılık, dosyanın kapatılmasını ister."
+    "'Deliller yetersiz. Bu cinayet faili meçhul kalacak.'"
+    "Dedektif dosyayı kapatır, odasına döner. Günlüğüne şöyle yazar:"
+    "'Lukas Steiner’ın ruhu hâlâ bu evde dolaşıyor. Ne Elena’nın korkusu ne Clara’nın hüznü ne de Arthur’un suskunluğu… gerçeği açığa çıkarmaya yetmedi.'"
+    "Cinayet çözülmedi ve kurbanın ailesi tatmin olmadı."
+    "Dedektif başka bir davaya verildi."
+    "'Bu dava burada bitti. Ama cevaplar hâlâ bu duvarlarda yankılanıyor.'"
+    return
+
+label son4:
+    scene sorgu_odasi at bg_fullscreen
+    show kurbanin_annesi_resim at karakter_buyuk with dissolve
+    "Dedektif, mektubu, Matilda’nın gözyaşlarını ve bastırılmış öfkesini birleştirdi. El yazısı eşleşiyor, Lukas’a tehditler savrulmuş. Geriye sadece bir imza eksik kalmıştı."
+    "Matilda tutuklandığında sessiz kaldı. Ne yalanladı, ne de itiraf etti."
+    "Olay kasabada büyük yankı uyandırdı. Bir anne, öz oğlunu öldürmüş müydü? Herkes ikiye bölündü."
+    "Ancak birkaç gün sonra, gerçek suç aleti bodrum katındaki eski sandığın altında bulundu. Üzerindeki parmak izleri Matilda’ya ait değildi."
+    "Yerel gazete: 'Dedektif vakayı kapattı ama arkasında kırık bir onur ve yarım kalan bir adalet bıraktı.'"
+    "Matilda Steiner serbest bırakıldı. Ancak herkesin gözünde hala bir şüpheli…"
+    "Lukas’ın gerçek katili hâlâ bulunamadı. Ve siz başka bir kasabada, yeni bir vakayla görevlendirildiniz."
+    return
+
+label son5:
+    scene sorgu_odasi at bg_fullscreen
+    show kurbanin_babasi_resim at karakter_buyuk with dissolve
+    "Dedektif, Gregory’nin bodruma inişini, mektubu ve geçmişteki şiddet eğilimini kafasında tarttı. Bir baba, öfkesiyle oğlunu öldürebilir miydi? Cevap, ayakkabı izlerinin yönü ve bıçaktaki tutarsız parmak izlerinde gizliydi."
+    "Gregory tutuklandığında ilk kez gözleri doldu."
+    "Gregory: 'Ben oğlumu sevmedim belki ama… onu öldürmedim,' dedi."
+    "Basın ve halk memnundu. Zengin bir adam düşmüştü. Adalet yerini bulmuş gibi görünüyordu."
+    "Ama aylar sonra dedektif bir haber aldı."
+    "Elena adlı eski hizmetçi intihar etmişti. Ardında kısa bir not bırakmıştı:"
+    "'O gece kahveyi ben hazırladım. Ama asıl planı ben yapmadım. Gerçek suçlular... hâlâ serbest.'"
+    "Yerel gazete: 'Dedektif, birilerini suçladı ama belki de sadece en kolay hedefi seçti.'"
+    "Gregory Steiner mahkum edildi. Ama bu dava… hiçbir zaman tam olarak kapanmadı."
+    return
