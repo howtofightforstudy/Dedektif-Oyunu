@@ -1,5 +1,4 @@
 # DEDEKTİF OYUNU: Lukas Steiner Vakası
-<br>
 
 ## Hakkında <br>
 Bu proje, 1992 yılında Alamnya'da geçen kurmaca bir dedektiflik senaryosuna dayanan interaktif bir oyun senaryosudur. Oyuncular, gizemli bir şekilde ölen Lukas Steiner'ın katilini bulmak için tanıkları sorgular, ipuçlarını değerlendirir ve gerçekleri açığa çıkarır.
