@@ -272,14 +272,18 @@ label sorgu_eski_sevgili:
 
     jump supheliler_sorgulaniyor
 
+
 label sorgu_eski_sevgili_abisi:
     scene sorgu_odasi at bg_fullscreen
     show eski_sevgili_abisi_resim at karakter_buyuk_sol with dissolve
-
+   
     if secilen_dedektif_tipi == "erkek":
         show dedektif_e_resim at karakter_buyuk_sag with moveinright
     else:
-        show dedektif_e_resim at karakter_buyuk_sag with moveinright
+   
+        show dedektif_k_resim at karakter_buyuk_sag with moveinright
+   
+    
     secilen_dedektif_karakteri "Merhaba Arthur, kız kardeşin için endişelendiğini biliyorum. Ama Lukas’a zarar verdin mi?"
     eski_sevgili_abisi "Onu tehdit ettim evet... ama ben öldürmedim."
     secilen_dedektif_karakteri "Üniformanda Lukas’a ait kan lekesi var. Bunu nasıl açıklarsın?"
