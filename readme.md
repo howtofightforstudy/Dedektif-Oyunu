@@ -10,27 +10,21 @@ Lukas Steiner, 28 yaşında varlıklı bir iş insanıdır. Kendi malikanesinde 
 <br>
 
 ### Sorgulanan Karakterler: <br>
-- Hizmetçi Elena: Lukas'ın günlük yaşantısını en yakın bilen kişi.
-- Eski Sevgilisi Clara: Geçmişin gölgeleri ve kırık kalpler.
-- Eski Sevgilisinin Abisi Arthur: Korumacı mıydı yoksa tehlikeli mi?
-- Annesi Matilda: Soğukkanlı ve ketum.
-- Babası Gregory: Set mizaçlı, geçmişten gelen sırlarla dolu.
-<br>
+- **Elena (Hizmetçi):** Lukas’ın günlük hayatını en yakından bilen kişi. İtaatkâr mı, yoksa suskun bir tanık mı?
+- **Clara (Eski Sevgilisi):** Terk edilmişliğin izlerini taşıyor. Yas mı tutuyor, yoksa intikam mı?
+- **Arthur (Clara’nın Abisi):** Korumacı bir ağabey mi, yoksa gizli bir düşman mı?
+- **Matilda (Anne):** Soğukkanlı, kontrolcü. Lukas'ın karanlık yönlerini saklamaya mı çalışıyor?
+- **Gregory (Baba):** Sert ve gizemli. Geçmişteki sırların anahtarı onun ellerinde olabilir.
 
-## Oynayış <br>
-Oyuncu her karakterle diyolog kurar, doğru soruları sorarak ipuçları toplar. Oyun ilerledikçe her karakterin sakladığı sırlar ve ilişkiler ağı ortaya çıkar. <br>
+## Oyun Hakkında
+**Dedektif Oyunu**, oyuncunun bir dedektif rolünü üstlenerek Lukas Steiner adlı bir adamın ölümünü araştırdığı, hikaye odaklı bir oyunudur. Oyuncular ipuçlarını toplayacak, şüphelileri sorgulayacak ve olayın ardındaki gerçeği ortaya çıkarmaya çalışacak.
+- **Oyun Türü:** Görsel Roman / Dedektiflik
+- **Geçtiği Yıl:** 1922
+- **Konu:** Kadın düşmanı bir adamın şüpheli ölümü
 
-## Hedef <br>
-Olayın perde arkasını çözerek Lukas Steiner'ın gerçek ölüm nedenini ve varsa katilini ortaya çıkarmak.
-<br>
+## ✨ Özellikler
+- Diyaloglar ve sorgulamalar
+- Oyuncu seçimlerine göre değişen sonlar
+- Dönemin atmosferine uygun tasarım
 
-## Kullanım <br>
-Bu dosya şu amaçlarla kullanılabilir: <br>
-- Metin tabanlı bir interaktif oyun yapmak
-- Bir masaüstü rol yapma oyununa (TTRPG) senaryo hazırlığı
-- Kısa film ya da dizi projesi için temel hikaye yapısı
-<br>
-
-# Durum <br>
-[Senaryo yazımı devam ediliyor/İlk sürüm tamamlandı]
-<br>
+> ⚠️ Bu proje hâlâ **geliştirme aşamasındadır**. İçerikler ve mekanikler zamanla güncellenebilir.
