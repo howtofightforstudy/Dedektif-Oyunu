@@ -465,7 +465,7 @@ label son1:
     return
 
 label son2:
-    scene sorgu_odasi at bg_fullscreen
+    scene kasaba at bg_fullscreen
     show hizmetci_resim at karakter_buyuk with dissolve
     "Deliller hizmetçiyi gösteriyordu. Zehirli çay, mutfak bilgisi, parmak izi. Başka ne gerekiyordu ki?"
     "Dedektif, Elena’yı cinayetle suçlar. Hizmetçi gözyaşlarıyla bağırır:"
@@ -480,7 +480,7 @@ label son2:
     return
 
 label son3:
-    scene sorgu_odasi at bg_fullscreen
+    scene kasaba at bg_fullscreen
     "Hiçbir şey tam olarak uyuşmuyor. Parmak izi, ama içilmemiş çay. İtiraf ama yanlış silah. Öfke ama suskunluk…"
     "Dedektif hiçbir şüpheliyi suçlayamaz. Elindeki kanıtlar her birini işaret eder ama aynı anda hiç kimseyi de net olarak göstermez."
     "Savcılık, dosyanın kapatılmasını ister."
