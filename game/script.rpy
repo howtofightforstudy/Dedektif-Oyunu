@@ -59,7 +59,6 @@ label start:
     "O sabah, çay fincanındaki parmak izleri ve tek bir yudum dahi alınmamış çay, olayın yalnızca başlangıcıydı."
     "Hizmetçi gözaltına alındı. Fakat o evde herkesin bir bahanesi, herkesin karanlıkta kalan bir yüzü vardı."
     "Zira bazı sırlar, kahveden bile daha acıydı."
-    
     jump dedektif_secimi
 
 label dedektif_secimi:
@@ -122,7 +121,6 @@ label olaylar_baslangici:
     sef "Çayı hazırlayan ise Steiner malikanesinde çalışan Hizmetçi Elena."
     sef "Şüphelilerimiz Lukas Steiner'ın eski sevgilisi Clara, eski sevgilisinin abisi Arthur, çayı hazırlayan hizmetçi Elena ve ebeveynleri."
     secilen_dedektif_karakteri "Bilgiler için teşekkür ederim Şef. Şüphelileri sorgulamak istiyorum."
-
     jump supheliler_sorgulaniyor
 
 default sorgu_hizmetci_dinlendi = False
@@ -205,7 +203,6 @@ label sorgu_hizmetci:
             "Elena titrek bir sesle cevap verir"
             hizmetci "Hayır..."
             secilen_dedektif_karakteri "Anladım. Sorgu için teşekkürler Elena Hanım."
-
     jump supheliler_sorgulaniyor
 
 label sorgu_eski_sevgili:
@@ -244,7 +241,6 @@ label sorgu_eski_sevgili:
             eski_sevgili "Ben sadece… sadece onun değişmesini istedim… Sevdiği bir adam gibi olmasını…"
             eski_sevgili "Ama her defasında beni daha fazla kırdı. Bu, onu öldürmek istediğim anlamına gelmez!"
             secilen_dedektif_karakteri "Anladım. Sorgu için teşekkürler Clara hanım."
-
     jump supheliler_sorgulaniyor
 
 label sorgu_eski_sevgili_abisi:
@@ -342,7 +338,6 @@ label sorgu_kurbanin_annesi:
             kurbanin_annesi "El yazısı benzese de ben değilim ama mektubun tarzı... Elena’nın yazılarına benziyor."
             kurbanin_annesi "Hizmetçi olarak köşkte çok şey yaşadı. Belki bir uyarıydı bu mektup belki de haykırış..."
             secilen_dedektif_karakteri "Anlıyorum. Yardımcı olduğunuz için teşekkür ederim."
-
     jump supheliler_sorgulaniyor
 
 label sorgu_kurbanin_babasi:
@@ -385,7 +380,6 @@ label sorgu_kurbanin_babasi:
             kurbanin_babasi "Evet. Kimseyle karşılaşmadım. Sessizlik iyi gelir sanmıştım. Ne ironi… o sessizlik o gece çok şeyin üzerini örtmüş."
             secilen_dedektif_karakteri "Peki. İş birliğiniz için teşekkür ederim Bay Steiner. Gerekirse tekrar konuşmak isteyebilirim."
             kurbanin_babasi "Elbette. Umarım adalet yerini bulur. Ve umarım Lukas’ın adı sadece hatalarıyla anılmaz."
-
     jump supheliler_sorgulaniyor
 
 label sucluyu_sec:
