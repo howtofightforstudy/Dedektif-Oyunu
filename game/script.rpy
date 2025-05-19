@@ -12,6 +12,7 @@ define sef = Character("Kasaba Şefi", color="#c8ffc8")
 image ev = "images/ev.jpg"
 image sorgu_odasi = "images/sorgu_odasi.png"
 image kasaba = "images/kasaba.png"
+image gazete = "images/gazete.png"
 image dedektif_e_resim = "images/karakterler/erkek_dedektif.png"
 image dedektif_k_resim = "images/karakterler/kadin_dedektif.png"
 image hizmetci_resim = "images/karakterler/hizmetci.png"
@@ -21,8 +22,6 @@ image kurbanin_annesi_resim = "images/karakterler/kurbanin_annesi.png"
 image kurbanin_babasi_resim = "images/karakterler/kurbanin_babasi.png"
 image sef_resim = "images/karakterler/sef.png"
 
-
-# Transform tanımlamaları
 transform karakter_buyuk:
     zoom 1.5
     anchor (0.5, 1.0)
@@ -55,13 +54,9 @@ label start:
     play music "audio/op.mp3" volume 0.5
 
     "Yıl 1922. Sisli bir sabahın serinliğinde, Steiner malikanesinin gri taş duvarları yankı dolu bir çığlıkla sarsıldı."
-
-    "Zengin ve küstah genç adam Lukas Steiner, odasında cansız halde bulundu. Parmaklarının ucunda bir kahve fincanı, göğsünde ise soğuk bir bıçağın izini taşıyan derin bir yara..."
-
+    "Zengin ve küstah genç adam Lukas Steiner, odasında cansız halde bulundu. Parmaklarının ucunda bir çay fincanı, göğsünde ise soğuk bir bıçağın izini taşıyan derin bir yara..."
     "Steiner, kadınlara karşı küçümseyici tavırlarıyla tanınır; ardında incinmiş kalpler, bastırılmış öfkeler ve sessizce yutulmuş nefretler bırakırdı."
-
-    "O sabah, kahve fincanındaki parmak izleri ve tek bir yudum dahi alınmamış kahve, olayın yalnızca başlangıcıydı."
-
+    "O sabah, çay fincanındaki parmak izleri ve tek bir yudum dahi alınmamış çay, olayın yalnızca başlangıcıydı."
     "Hizmetçi gözaltına alındı. Fakat o evde herkesin bir bahanesi, herkesin karanlıkta kalan bir yüzü vardı."
     "Zira bazı sırlar, kahveden bile daha acıydı."
     
@@ -114,67 +109,27 @@ label olaylar_baslangici:
     scene kasaba at bg_fullscreen
     show sef_resim at karakter_buyuk_sol with dissolve
 
-    sef "Kasabamıza hoş geldiniz, Dedektif. Sizlerle tanışmak büyük bir onurdur."
-
-    menu:
-        "Kasaba şefiyle tanış":
-            if secilen_dedektif_tipi == "erkek":
-                show dedektif_e_resim at karakter_buyuk_sag with moveinright
-                secilen_dedektif_karakteri "Memnun oldum, nasılsınız? Dosyayı inceledim, ancak bana olayı kısaca anlatır mısınız?"
-            elif secilen_dedektif_tipi == "kadin":
-                show dedektif_k_resim at karakter_buyuk_sag with moveinright
-                secilen_dedektif_karakteri "Memnun oldum, nasılsınız? Dosyayı inceledim, ancak bana olayı kısaca anlatır mısınız?"
-            $ tanisma_secildi = True
-
-        "Direkt vakaya geç":
-            if secilen_dedektif_tipi == "erkek":
-                show dedektif_e_resim at karakter_buyuk_sag with moveinright
-                secilen_dedektif_karakteri "Merhaba Şef, hemen vakaya geçebilir miyiz?"
-            elif secilen_dedektif_tipi == "kadin":
-                show dedektif_k_resim at karakter_buyuk_sag with moveinright
-                secilen_dedektif_karakteri "Merhaba Şef, hemen vakaya geçebilir miyiz?"
-            $ tanisma_secildi = False
-
-    if tanisma_secildi:
-        jump tanis
-    else:
-        jump gec
-
-label tanis:
-    show sef_resim at karakter_buyuk_sol with dissolve
-    sef "İyiyim, umarım siz de iyisinizdir... Dedektif, sabah saatlerinde bağırışlar üzerine yukarı çıktık. Lukas Steiner odasında ölü bulundu."
-    sef "Göğsünde derin bir bıçak yarası vardı. Yanında da dokunulmamış bir kahve fincanı..."
-    sef "Parmak izleri hizmetçiye aitmiş ama kız kahveyi içmeden bırakmış. Hizmetçi zehir koyduğunu kabul ediyor ama 'öldürmedim' diyor."
-    sef "O evde herkesin bir bahanesi var ama hiçbiri temiz değil, bilesiniz."
-    
-    if secilen_dedektif_tipi == "erkek":
-        show dedektif_e_resim at karakter_buyuk_sag
-    else:
-        show dedektif_k_resim at karakter_buyuk_sag
-
-    secilen_dedektif_karakteri "Şüpheliler belliyse hemen sorgulamak istiyorum."
-
-    jump supheliler_sorgulaniyor
-
-label gec:
-    show sef_resim at karakter_buyuk_sol with dissolve
-    sef "Anladım Dedektif. O zaman hemen vakaya geçelim..."
     if secilen_dedektif_tipi == "erkek":
         show dedektif_e_resim at karakter_buyuk_sag with moveinright
-        secilen_dedektif_karakteri "Şüpheliler belli ise hemen sorgulamak istiyorum"
-    elif secilen_dedektif_tipi == "kadin":
+    else:
         show dedektif_k_resim at karakter_buyuk_sag with moveinright
-        secilen_dedektif_karakteri "Şüpheliler belli ise hemen sorgulamak istiyorum"
+
+    sef "Kasabamıza hoş geldiniz [dedektif_isim] sizlerle tanışmak büyük bir onurdur."
+    secilen_dedektif_karakteri "Memnun oldum Şef. Dosyayı inceledim ancak bana kısaca olayı anlatır mısınız?"
+    sef "Lukas steiner’ın ölüm sebebi göğsündeki bıçak yarası ancak elindeki çay fincanı da şüpheleri çekti."
+    sef "Bu durumda fincandaki çayı incelemeye gönderdik."
+    sef "Adli tıp incelemesine göre çayın içinde sakinleştirici, yatıştırıcı maddeler bulunuyor."
+    sef "Çayı hazırlayan ise Steiner malikanesinde çalışan Hizmetçi Elena."
+    secilen_dedektif_karakteri "Bilgiler için teşekkür ederim Şef. Şüphelileri sorgulamak istiyorum."
 
     jump supheliler_sorgulaniyor
 
-
-# Oyun değişkenleri
 default sorgu_hizmetci_dinlendi = False
 default sorgu_eski_sevgili_dinlendi = False
 default sorgu_eski_sevgili_abisi_dinlendi = False
 default sorgu_kurbanin_annesi_dinlendi = False
 default sorgu_kurbanin_babasi_dinlendi = False
+
 
 label supheliler_sorgulaniyor: 
     scene sorgu_odasi at bg_fullscreen
@@ -197,6 +152,7 @@ label supheliler_sorgulaniyor:
         "Kurbanın Babası (Gregory)":
             $ sorgu_kurbanin_babasi_dinlendi = True
             jump sorgu_kurbanin_babasi
+        #suclular dinlendiyse acilacak
         "Suçluyu Belirle" if sorgu_hizmetci_dinlendi and sorgu_eski_sevgili_dinlendi and sorgu_eski_sevgili_abisi_dinlendi and sorgu_kurbanin_annesi_dinlendi and sorgu_kurbanin_babasi_dinlendi:
             jump sucluyu_sec
 
@@ -209,12 +165,24 @@ label sorgu_hizmetci:
     else:
         show dedektif_k_resim at karakter_buyuk_sag with moveinright
 
-    secilen_dedektif_karakteri "Direkt konuya gireceğim, boş vaktimiz yok. Lukas Steiner vefat ettiği zaman elinde fincan vardı. Kahveyi sen hazırlamışsın Elena Hanım. Fincanda sadece senin parmak izlerin var. Bunu nasıl açıklarsın?"
+    secilen_dedektif_karakteri "Merhaba Elena hanım. Direkt konuya gireceğim, boş vaktimiz yok."
+    secilen_dedektif_karakteri "Lukas Steiner’ın ölüm sebebinin göğsündeki bıçak yarası olduğunu düşünüyoruz."
+    secilen_dedektif_karakteri "Ancak olay yerinde elinde fincan vardı ve içindeki çayda bazı zararlı maddeler bulundu."
+    secilen_dedektif_karakteri "Çayı siz hazırlamışsınız Elena hanım. Fincanda sadece sizin parmak izleriniz var. Bunu nasıl açıklarsınız?"
     hizmetci "…"
-    hizmetci "Kahveyi hazırladım evet ama sadece içine biraz bitki özü kattım. Uykusuzdu son günlerde. Ona zarar vermek istemedim."
+    hizmetci "Çayı hazırladım evet ama sadece içine biraz bitki özü kattım. Uykusuzdu son günlerde. Ona zarar vermek istemedim."
+    secilen_dedektif_karakteri "Bitki özü dediğiniz madde tam olarak nedir ve neden kimseye söylemeden Lukas’ın kahvesine bir şey katma gereği duydunuz?"
+    hizmetci "Melisa ve papatya karışımıydı. Doğal, aktardan almıştım."
+    hizmetci "Lukas Bey son zamanlarda çok gergindi, geceleri uyuyamıyordu."
+    hizmetci "Konuşmalarımızda hep yorgun olduğunu söylerdi."
+    hizmetci "Eğer böyle bir şey olacağını bilseydim asla dokunmazdım kahvesine."
+    hizmetci "Yemin ederim, onu zehirlemek gibi bir niyetim yoktu!"
+
     menu: 
-        "Kahve içilmemiş. Bu durum için üzgün olmalısınız, sonuçta yardımcı olamadınız.":
-            hizmetci "Evet gerçekten çok üzgünüm… Bir yudum bile içse uykusuzluğuna çok iyi geleceğine emindim."
+        "Anladım. Mutfakta olduğunuz için bıçakların hepsini biliyor olmalısın sonuçta mutfakta çalışıyorsun.":
+            secilen_dedektif_karakteri "Anladım. Mutfakta olduğunuz için bıçakların hepsini biliyor olmalısın sonuçta mutfakta çalışıyorsun."
+            secilen_dedektif_karakteri "Steiner’ın ölüm sebebi bıçak yarası, biraz da bunun hakkında konuşalım."
+            hizmetci "Evet, bıçakları tanırım ama o bıçaklıkta değildi. Yani... biri almıştı zaten."
             secilen_dedektif_karakteri "Anladım. Mutfakta olduğunuz için bıçakların hepsini biliyor olmalısın sonuçta mutfakta çalışıyorsun. Steiner’ın ölüm sebebi bıçak yarası, buna ne diyeceksiniz?"
             hizmetci "Evet, bıçakları tanırım. Ama o bıçaklıkta değildi. Yani... biri almıştı zaten."
             secilen_dedektif_karakteri "Bunu nereden çıkardınız? Bu sizin sorumluluğunuzdaydı. Bıçağı birine siz vermiş olabilir misiniz?"
@@ -224,11 +192,12 @@ label sorgu_hizmetci:
         "Bitki özü katmanla zarar vermenin ne alakası olabilir ki? Bir ihtimal fincanın içinde bitki özünden başka bir şeyde olabilir mi Elena hanım?":
             hizmetci "Bitki özü ve biraz şeker koydum, kahvenin içinde başka bir şey yoktu "
             "Elena gözlerini kaçırır, parmakları ile oynar"
-            secilen_dedektif_karakteri "Anladım, zaten olay olduğu sırada bodruma indiğini söylüyorsun. Neden bodruma inmiştin?"
+            secilen_dedektif_karakteri "Anladım, zaten olay olduğu sırada bodruma indiğinizi söylüyorsunuz. Neden bodruma inmiştiniz?"
             hizmetci "Akşam yemeği için malzeme almam gerekiyordu."
             secilen_dedektif_karakteri "Sizi gören biri oldu mu?"
             hizmetci "Gitmeden önce Matilda hanıma haber vermiştim."
-            secilen_dedektif_karakteri "Anladım. Mutfakta olduğunuz için bıçakların hepsini biliyor olmalısın sonuçta mutfakta çalışıyorsun. Steiner’ın ölüm sebebi bıçak yarası, buna ne diyeceksiniz?"
+            secilen_dedektif_karakteri "Anladım. Mutfakta olduğunuz için bıçakların hepsini biliyor olmalısın sonuçta mutfakta çalışıyorsun."
+            secilen_dedektif_karakteri " Steiner’ın ölüm sebebi bıçak yarası, buna ne diyeceksiniz?"
             hizmetci "Evet, bıçakları tanırım. Ama o bıçaklıkta değildi. Yani... biri almıştı zaten."
             secilen_dedektif_karakteri "Bunu nereden çıkardınız? Bu sizin sorumluluğunuzdaydı. Bıçağı birine siz vermiş olabilir misiniz?"
             "Elena titrek bir sesle cevap verir"
@@ -433,8 +402,6 @@ label suclu_kurbanin_babasi:
     scene sorgu_odasi at bg_fullscreen
     jump son5
 
-# --- SONLAR ---
-
 label son1:
     scene sorgu_odasi at bg_fullscreen
     show eski_sevgili_abisi_resim at karakter_buyuk with dissolve
@@ -488,13 +455,14 @@ label son3:
     return
 
 label son4:
-    scene sorgu_odasi at bg_fullscreen
+    scene gazete 
     show kurbanin_annesi_resim at karakter_buyuk with dissolve
     "Dedektif, mektubu, Matilda’nın gözyaşlarını ve bastırılmış öfkesini birleştirdi. El yazısı eşleşiyor, Lukas’a tehditler savrulmuş. Geriye sadece bir imza eksik kalmıştı."
     "Matilda tutuklandığında sessiz kaldı. Ne yalanladı, ne de itiraf etti."
     "Olay kasabada büyük yankı uyandırdı. Bir anne, öz oğlunu öldürmüş müydü? Herkes ikiye bölündü."
     "Ancak birkaç gün sonra, gerçek suç aleti bodrum katındaki eski sandığın altında bulundu. Üzerindeki parmak izleri Matilda’ya ait değildi."
     "Yerel gazete: 'Dedektif vakayı kapattı ama arkasında kırık bir onur ve yarım kalan bir adalet bıraktı.'"
+    hide kurbanin_annesi_resim with dissolve
     "Matilda Steiner serbest bırakıldı. Ancak herkesin gözünde hala bir şüpheli…"
     "Lukas’ın gerçek katili hâlâ bulunamadı. Ve siz başka bir kasabada, yeni bir vakayla görevlendirildiniz."
     return
